@@ -24,6 +24,22 @@ Também contará com:
 * Documentação completa do Projeto
 * Utilização de ferramentas de gestão para organização
 
+## Documentação do Projeto
+
+A documentação completa do projeto está disponível no link abaixo:
+
+🔗 [One Drive](https://bandteccom-my.sharepoint.com/:f:/g/personal/raissa_nascimento_sptech_school/IgDLgu3QXrmYRq0S1VYx4TTXAefHzgv4Mfo-vbYYHc3eThQ?e=zNUwm7)
+
+Neste diretório estarão organizados os principais entregáveis desenvolvidos ao longo do projeto, incluindo:
+
+📄 Documentação geral e contexto do projeto
+🗂️ Modelagem e scripts de Banco de Dados
+📊 Planilhas de planejamento e backlog (gestão de atividades)
+🧱 Diagramas de arquitetura da solução
+📝 Registros e materiais de apoio 
+
+---
+
 📌 **Observação:**
 Este projeto é desenvolvido exclusivamente para fins acadêmicos, como parte do curso de Sistemas de Informação.
 
