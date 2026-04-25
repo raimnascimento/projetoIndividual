@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+.home-bg{
+  height: 95vh;
+  color: #fff;
+  background: linear-gradient(rgba(30, 28, 28, 0.4), rgba(38, 37, 37, 0.4)),
+  url("/public/assets/imgs/bg-materiais-pinturas.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.titulo {
+  color: #2bd0ea;
+  width: fit-content;
+  font-weight: 600;
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+}
+
+.navbar {
+  display: flex;
+  gap: 45px;
+  list-style: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  font-family: "Playfair Display", serif;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.9);
+}
+
+.navbar-links:hover {
+  font-weight: 800;
+  color: orangered;
+  text-shadow: 0px 0px 8px rgba(5, 5, 5, 0.912);
+}
+
+.agora {
+  font-weight: 800;
+}
+
+/* APRESENTAÇÃO */
+
+.div-apresentacao {
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.titulo-apresentacao,
+.titulo-convite {
+  font-family: "Playfair Display", serif;
+  font-size: 6rem;
+  width: 40%;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.span-ttl {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: orangered;
+}
+
+.espaco-apresentacao {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.texto-apresentacao,
+.texto-convite {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.span-txt {
+  color: orangered;
+  font-weight: 600;
+}
+
+.btn-apresentacao,
+.btn-convite {
+  background-color: rgba(255, 68, 0, 0.89);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 16px 12px;
+  width: 90%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Playfair Display", serif;
+}
+
+.btn-apresentacao:hover,
+.btn-convite:hover {
+  background-color: rgb(255, 68, 0);
+  font-weight: 800;
+  font-size: 1.210rem;
+}
+
+/* DETALHES SOBRE MIM */
+
+.detalhes-sobre-mim {
+  padding: 3% 5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.video {
+  width: 60%;
+}
+
+.video iframe {
+  width: 90%;
+  height: 420px;
+  border-radius: 18px;
+  display: block;
+}
+
+.titulo-video {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Great Vibes";
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-coracao {
+  width: 30px;
+}
+
+.beneficios {
+  width: 50%;
+}
+
+.titulo-beneficios {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Great Vibes";
+}
+
+.icon-beneficios {
+  width: 50px;
+}
+
+.texto-beneficios {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.5rem;
+  font-weight: 400;
+  width: 80%;
+}
+
+.borda {
+  margin: 5% 0;
+  border-bottom: 2px solid rgba(255, 68, 0, 0.547);
+  width: 90%;
+}
+
+/* SEÇÃO ARTÍSTICA */
+
+.call-to-action {
+  width: 100%;
+  margin-top: -80px;
+  position: relative;
+  z-index: 2;
+  padding: 5px 0;
+}
+
+.bg-artistico {
+  width: 100%;
+  min-height: 480px;
+  background-image: 
+  url("../assets/imgs/bg-artistic.png");
+  background-size: cover;
+  background-position: center 62%;
+  background-repeat: no-repeat;
+}
+
+.flex-convite {
+  display: flex;
+  min-height: 75vh;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.convite {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.titulo-convite {
+  font-size: 5rem;
+  width: 100%;
+}
+
+.texto-convite{
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 80%;
+}
+
+.btn-convite {
+  width: 55%;
+}
+
+.bg-convite {
+  width: 100%;
+  min-height: 600px;
+  background-image:
+  url("../assets/imgs/minhas-pinturas.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* RODAPÉ */
+.rodape {
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #0b0b0b;
+  background: linear-gradient(
+    to bottom,
+    whitesmoke 15%,
+    oklch(65.93% 0.23005 35.209 / 0.438) 55%,
+    rgba(255, 68, 0, 0.9) 100%
+  );
+}
+
