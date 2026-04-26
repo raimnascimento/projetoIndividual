@@ -6,87 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Login</title>
+    <title>Meu mundo em tinta | Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <script src="./js/sessao.js"></script>
 
+    <link rel="icon" href="./assets/icon/iconpallete.png">
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./css/cadastro-login.css"/>
 </head>
 
 <body>
 
-    <!--Header-->
-
-    <div class="header">
+    <div class="home-bg home-login">
+        <header class="home">
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
+            <h1 class="titulo">Meu mundo em tinta</h1>
             <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
                 <li class="agora">
-                    <a href="#">Login</a>
+                    <a class="navbar-links" href="index.html">Inicial</a>
                 </li>
                 <li>
-                    <a href="cadastro.html">Cadastro</a>
+                    <a class="navbar-links" href="simulador.html">Texto</a>
+                </li>
+                <li>
+                    <a class="navbar-links" href="login.html">Login</a>
+                </li>
+                <li>
+                    <a class="navbar-links" href="cadastro.html">Cadastro</a>
                 </li>
             </ul>
         </div>
-    </div>
+        </header>
 
-
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+        <div class="container-login">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
             </div>
-        </div>
-        <div class="container">
+
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
-                <div class="formulario">
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
-                    </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
-                    </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+                <div class="lado-esquerdo">
+                    <h2 class="titulo-login">Que bom te ver<br><span class="span-msg-login">por aqui! <img src="assets/icon/coracao.png" alt="Coração" class="icon-span-login"></span></h2>
+                    <p class="txt-login">Entre para continuar conhecendo o mundo da arte, das cores e da criatividade.</p>
+                    <img src="assets/imgs/flores-login.png" alt="Flores em aquarela" class="img-principal-login">
                 </div>
 
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
+                <div class="lado-direito">
+                    <div class="formulario">
+                        <div class="campo">
+                            <span class="campo-login">E-mail:</span>
+                            <input id="email_input" type="text" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="campo">
+                            <span class="campo-login">Senha:</span>
+                            <input id="senha_input" type="password" placeholder="******">
+                        </div>
 
-                <div id="div_erros_login"></div>
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="./assets/circle-loading.gif" id="loading-gif">
+                        </div>
+
+                        <div id="div_erros_login"></div> 
+
+                        <button class="botao" onclick="entrar()">Entrar</button>
+
+                        <p class="cadastrar">Ainda não tem conta? <span class="campo-cadastrar"><a href="cadastro.html">Cadastre-se</a></span></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
-    <!--footer fim-->
-
+        <footer class="rodape-login-cadastro">
+            <p>Criado com carinho por Raissa Nascimento 🎨</p>
+        </footer>
+    </div>  
 </body>
-
 </html>
-
 <script>
-
-
     function entrar() {
         aguardar();
 

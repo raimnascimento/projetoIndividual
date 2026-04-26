@@ -7,7 +7,7 @@ body {
 .home-bg{
   height: 95vh;
   color: #fff;
-  background: linear-gradient(rgba(30, 28, 28, 0.4), rgba(38, 37, 37, 0.4)),
+  background: linear-gradient(rgba(30, 28, 28, 0.638), rgba(38, 37, 37, 0.4)),
   url("/public/assets/imgs/bg-materiais-pinturas.jpg");
   background-size: cover;
   background-position: center;
@@ -49,8 +49,8 @@ header {
   color: #fff;
   font-weight: 600;
   font-size: 1.3rem;
-  font-family: "Playfair Display", serif;
   text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.9);
+  font-family: "Source Code Pro", monospace;
 }
 
 .navbar-links:hover {
@@ -105,7 +105,8 @@ header {
 
 .span-txt {
   color: orangered;
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 0px 0px 8px rgba(5, 5, 5, 0.912);
 }
 
 .btn-apresentacao,
@@ -270,4 +271,3 @@ header {
     rgba(255, 68, 0, 0.9) 100%
   );
 }
-

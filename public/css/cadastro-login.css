@@ -1,0 +1,194 @@
+/* LOGIN */
+
+.home-login {
+    height: 100vh;
+    background-image: url('/public/assets/imgs/bg-login-cadastro.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+.navbar-links {
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.3rem;
+    color: #000;
+    text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-links:hover {
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0px 0px 6px rgba(1, 1, 1, 1);
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 90vh;
+}
+
+.titulo-login {
+    font-size: 2.2rem;
+    font-family: "Playfair Display", serif;
+    color: #000;
+}
+
+.span-msg-login{
+    color: orangered;
+    font-weight: 700;
+}
+
+.icon-span-login{
+    width: 25px;
+}
+
+.txt-login {
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.3rem;
+    color: #000;
+    width: 80%;
+}
+
+.img-principal-login {
+    width: 55%;
+    margin-top: auto;
+}
+
+.card-login {
+    width: 60%;
+    max-width: 1000px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: flex;
+    padding: 40px;
+    gap: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lado-esquerdo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lado-direito {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border: 1px solid #57585878;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.input-select {
+    border: 1px solid #57585878;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    font-family: "Source Code Pro", monospace;
+    background-color: white;
+    cursor: pointer;
+}
+
+.campo-login {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    margin: 15px 0;
+    color: #000;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.botao {
+    margin: 20px auto 0;
+    cursor: pointer;
+    width: 70%;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: rgb(255, 68, 0);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.botao:hover {
+    padding: 12px;
+    background-color: rgb(249, 114, 4);
+    font-weight: 700;
+}
+
+.cadastrar {
+    font-family: "Source Code Pro", monospace;
+    color: #000;
+    font-weight: 600;
+    font-size: .9rem;
+    text-align: center;
+    margin: 16px auto;
+}
+
+.campo-cadastrar a {
+    font-weight: 700;
+    text-decoration: none;
+    color: orangered;
+}
+
+.campo-cadastrar a:hover {
+    color: rgb(249, 114, 4);
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+#div_erros_login {
+    display: none
+}
+
+.rodape-login-cadastro {
+    text-align: center;
+    padding: 15px;
+    font-family: "Source Code Pro", monospace;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1rem;
+    width: 100%;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #0b0b0b;
+}
+
+
+
+
+
