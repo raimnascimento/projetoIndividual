@@ -1,152 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Meu mundo em tinta | Cadastro</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="icon" href="./assets/icon/iconpallete.png">
-    <link rel="stylesheet" href="./css/estilo.css"/>
-    <link rel="stylesheet" href="./css/cadastro-login.css"/>
-</head>
+    <link rel="icon" href="./assets/icon/iconpallete.png" />
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="stylesheet" href="./css/cadastro-login.css" />
+  </head>
 
-<body onload="listar()">
+  <body>
     <div class="home-bg home-login">
-        <header class="home">
+      <header class="home">
         <div class="container">
-            <h1 class="titulo">Meu mundo em tinta</h1>
-            <ul class="navbar">
-              <li class="agora">
-                  <a class="navbar-links" href="index.html">Inicial</a>
-              </li>
-              <li>
-                  <a class="navbar-links" href="simulador.html">Texto</a>
-              </li>
-              <li>
-                  <a class="navbar-links" href="login.html">Login</a>
-              </li>
-              <li>
-                  <a class="navbar-links" href="cadastro.html">Cadastro</a>
-              </li>
-            </ul>
+          <h1 class="titulo">Meu mundo em tinta</h1>
+          <ul class="navbar">
+            <li class="agora">
+              <a class="navbar-links" href="index.html">Inicial</a>
+            </li>
+            <li>
+              <a class="navbar-links" href="simulador.html">Texto</a>
+            </li>
+            <li>
+              <a class="navbar-links" href="login.html">Login</a>
+            </li>
+            <li>
+              <a class="navbar-links" href="cadastro.html">Cadastro</a>
+            </li>
+          </ul>
         </div>
-        </header>
+      </header>
 
-        <div class="container-login">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
-
-            <div class="card card-login">
-                <div class="lado-esquerdo">
-                    <h2 class="titulo-login">Bem vindo!<br>Seu espaço para <span class="span-msg-login">sentir, criar e se expressar</span> começa aqui.<img src="assets/icon/coracao.png" alt="Coração" class="icon-span-login"></h2>
-                    <p class="txt-login">Cadastre-se para continuar conhecendo o mundo da arte, das cores e da criatividade.</p>
-                    <img src="assets/imgs/flores-login.png" alt="Flores em aquarela" class="img-principal-login">
-                </div>
-
-                <div class="lado-direito">
-                    <div class="formulario">
-                      <div class="campo">
-                        <span class="campo-login">Nome:</span>
-                        <input id="nome_input" type="text" placeholder="Seu nome" />
-                      </div>
-                      <div class="campo">
-                        <span class="campo-login">E-mail:</span>
-                        <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-                      </div>
-                      <div class="campo">
-                        <span class="campo-login">Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******" />
-                      </div>
-                      <div class="campo">
-                        <span class="campo-login">Confirmação da Senha:</span>
-                        <input id="confirmacao_senha_input" type="password" placeholder="******" />
-                      </div>
-                      <div class="campo">
-                        <span class="campo-login">Possui contato com a arte?</span>
-                        <select id="codigo_input" class="input-select">
-                            <option value="0">Selecione uma opção</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                      </div>
-
-                      <div id="div_aguardar" class="loading-div">
-                            <img src="./assets/circle-loading.gif" id="loading-gif">
-                      </div>
-                      <div id="div_erros_login"></div>
-                        
-                      <button class="botao" onclick="cadastrar()">Cadastrar</button>
-                      <p class="cadastrar">Já tem uma conta? <span class="campo-cadastrar"><a href="login.html">Faça login</a></span></p>
-                    </div>
-                </div>
-            </div>
+      <div class="container-login">
+        <div class="alerta_erro">
+          <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+          </div>
         </div>
 
-        <footer class="rodape-login-cadastro">
-            <p>Criado com carinho por Raissa Nascimento 🎨</p>
-        </footer>
-    </div>  
-</body>
+        <div class="card card-login">
+          <div class="lado-esquerdo">
+            <h2 class="titulo-login">
+              Bem vindo!<br />Seu espaço para
+              <span class="span-msg-login">sentir, criar e se expressar</span>
+              começa aqui.<img
+                src="assets/icon/coracao.png"
+                alt="Coração"
+                class="icon-span-login"
+              />
+            </h2>
+            <p class="txt-login">
+              Cadastre-se para continuar conhecendo o mundo da arte, das cores e
+              da criatividade.
+            </p>
+            <img
+              src="assets/imgs/flores-login.png"
+              alt="Flores em aquarela"
+              class="img-principal-login"
+            />
+          </div>
+
+          <div class="lado-direito">
+            <div class="formulario">
+              <div class="campo">
+                <span class="campo-login">Nome:</span>
+                <input id="nome_input" type="text" placeholder="Seu nome" />
+              </div>
+              <div class="campo">
+                <span class="campo-login">E-mail:</span>
+                <input
+                  id="email_input"
+                  type="text"
+                  placeholder="meuemail@provedor.com"
+                />
+              </div>
+              <div class="campo">
+                <span class="campo-login">Senha:</span>
+                <input
+                  id="senha_input"
+                  type="password"
+                  oninput="validarSenha()"
+                  placeholder="******"
+                />
+              </div>
+              <p id="msgSenha"></p>
+              <div class="campo">
+                <span class="campo-login">Confirmação da Senha:</span>
+                <input
+                  id="confirmacao_senha_input"
+                  type="password"
+                  placeholder="******"
+                />
+              </div>
+              <div class="campo">
+                <span class="campo-login">Possui contato com a arte?</span>
+                <select id="codigo_input" class="input-select">
+                  <option value="0">Selecione uma opção</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+              </div>
+
+              <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif" />
+              </div>
+              <div id="div_erros_login"></div>
+
+              <button class="botao" onclick="cadastrar()">Cadastrar</button>
+              <p class="cadastrar">
+                Já tem uma conta?
+                <span class="campo-cadastrar"
+                  ><a href="login.html">Faça login</a></span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="rodape-login-cadastro">
+        <p>Criado com carinho por Raissa Nascimento 🎨</p>
+      </footer>
+    </div>
+  </body>
 </html>
 <script>
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
-
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
+    // Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var cpfVar = cpf_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var nomeVar = nome_input.value.trim();
+    var emailVar = email_input.value.trim();
+    var senhaVar = senha_input.value.trim();
+    var confirmacaoSenhaVar = confirmacao_senha_input.value.trim();
+    var contatoArteVar = codigo_input.value;
+    let erro = false;
 
-    // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
-      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
+      mensagem_erro.innerHTML = `Por gentileza, preencha os campos corretamente para efetuar o seu cadastro.`;
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
+      erro = true;
+    } else if (nomeVar.length < 3) {
+      mensagem_erro.innerHTML = `Insira um nome válido, por favor. O nome deve conter no mínimo 3 caracteres.`;
+      cardErro.style.display = "block";
+      erro = true;
+    } else if (!emailVar.includes("@") || !emailVar.includes(".")) {
+      mensagem_erro.innerHTML = `Por gentileza, insira um e-mail válido!`;
+      cardErro.style.display = "block";
+      erro = true;
+    } else if (senhaVar != confirmacaoSenhaVar) {
+      mensagem_erro.innerHTML = `Revise os campos, as senhas informadas estão diferentes!`;
+      cardErro.style.display = "block";
+      erro = true;
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
+    // Verificando se há algum campo em branco
+    // if (
+    //   nomeVar == "" ||
+    //   emailVar == "" ||
+    //   senhaVar == "" ||
+    //   confirmacaoSenhaVar == "" ||
+    //   contatoArteVar == ""
+    // ) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML =
+    //     "(Mensagem de erro para todos os campos em branco)";
+
+    //   finalizarAguardar();
+    //   return false;
+    // } else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    if (erro == true) {
+      cardErro.style.display = "block";
+      return false;
     }
 
     // Enviando o valor da nova input
@@ -158,11 +202,10 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-        cpfServer: cpfVar,
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        contatoArteServer: contatoArteVar,
       }),
     })
       .then(function (resposta) {
@@ -192,24 +235,22 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
+  function validarSenha() {
+    var senhaVar = senha_input.value.trim();
 
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+    if (senhaVar == "") {
+      msgSenha.style.display = "none";
+      return;
+    }
+
+    if (senhaVar.length < 6) {
+      msgSenha.style.display = "block";
+      msgSenha.innerHTML = "Senha fraca!";
+    } else if (senhaVar.length <= 10) {
+      msgSenha.innerHTML = "Senha média!";
+    } else {
+      msgSenha.innerHTML = "Senha forte!";
+    }
   }
 
   function sumirMensagem() {

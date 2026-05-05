@@ -4,11 +4,16 @@ body {
   background-color: whitesmoke;
 }
 
-.home-bg{
-  height: 95vh;
+* {
+  box-sizing: border-box;
+}
+
+.home-bg {
+  min-height: 100vh;
   color: #fff;
-  background: linear-gradient(rgba(30, 28, 28, 0.638), rgba(38, 37, 37, 0.4)),
-  url("/public/assets/imgs/bg-materiais-pinturas.jpg");
+  background:
+    linear-gradient(rgba(30, 28, 28, 0.638), rgba(38, 37, 37, 0.4)),
+    url("../assets/imgs/bg-materiais-pinturas.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -59,10 +64,6 @@ header {
   text-shadow: 0px 0px 8px rgba(5, 5, 5, 0.912);
 }
 
-.agora {
-  font-weight: 800;
-}
-
 /* APRESENTAÇÃO */
 
 .div-apresentacao {
@@ -76,7 +77,7 @@ header {
 .titulo-convite {
   font-family: "Playfair Display", serif;
   font-size: 6rem;
-  width: 40%;
+  width: 50%;
   line-height: 1.1;
   font-weight: 700;
   margin-bottom: 25px;
@@ -89,16 +90,16 @@ header {
 }
 
 .espaco-apresentacao {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .texto-apresentacao,
 .texto-convite {
   font-family: "Source Code Pro", monospace;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 25px;
 }
@@ -112,21 +113,30 @@ header {
 .btn-apresentacao,
 .btn-convite {
   background-color: rgba(255, 68, 0, 0.89);
-  color: #fff;
   border: none;
   border-radius: 20px;
   padding: 16px 12px;
   width: 90%;
+}
+
+.btn-apresentacao a,
+.btn-convite a {
+  text-decoration: none;
+  color: #fff;
   font-weight: 700;
   font-size: 1.2rem;
   font-family: "Playfair Display", serif;
+}
+
+.btn-convite a {
+  color: #000;
 }
 
 .btn-apresentacao:hover,
 .btn-convite:hover {
   background-color: rgb(255, 68, 0);
   font-weight: 800;
-  font-size: 1.210rem;
+  font-size: 1.21rem;
 }
 
 /* DETALHES SOBRE MIM */
@@ -205,8 +215,7 @@ header {
 .bg-artistico {
   width: 100%;
   min-height: 480px;
-  background-image: 
-  url("../assets/imgs/bg-artistic.png");
+  background-image: url("../assets/imgs/bg-artistic.png");
   background-size: cover;
   background-position: center 62%;
   background-repeat: no-repeat;
@@ -234,7 +243,7 @@ header {
   width: 100%;
 }
 
-.texto-convite{
+.texto-convite {
   font-size: 1.3rem;
   font-weight: 600;
   width: 80%;
@@ -247,8 +256,7 @@ header {
 .bg-convite {
   width: 100%;
   min-height: 600px;
-  background-image:
-  url("../assets/imgs/minhas-pinturas.png");
+  background-image: url("../assets/imgs/minhas-pinturas.png");
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -257,6 +265,7 @@ header {
 /* RODAPÉ */
 .rodape {
   width: 100%;
+  overflow-x: hidden;
   padding: 14px;
   text-align: center;
   font-size: 1rem;
@@ -268,6 +277,6 @@ header {
     to bottom,
     whitesmoke 15%,
     oklch(65.93% 0.23005 35.209 / 0.438) 55%,
-    rgba(255, 68, 0, 0.9) 100%
+    rgba(255, 68, 0, 0.581) 100%
   );
 }
