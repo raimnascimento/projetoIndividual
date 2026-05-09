@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="../assets/icon/favicon2.ico"
+      type="image/x-icon"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu mundo em tinta | Museu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="../assets/icon/iconpallete.png" />
+    <link rel="stylesheet" href="/../css/dashboards.css" />
+    <link rel="stylesheet" href="/../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+  </head>
+
+  <body onload="(validarSessao(), exibirAquarios(), atualizacaoPeriodica())">
+    <aside class="janela">
+      <div class="menu-lateral menu-dash">
+        <h1 class="titulo">Meu mundo em tinta</h1>
+
+        <div class="cumprimento-usuario">
+          <p>Olá, <span id="b_usuario">usuário</span>!</p>
+        </div>
+
+        <div class="aba-menu">
+          <a href="cards.html">
+            <div class="flex-menu">
+              <img src="/assets/icon/casa-icon.svg" alt="" class="icon-menu" />
+              <p>Como começar</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="tipo-arte.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/pincel-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Impressionismo</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="museu.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/museu-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Meu museu</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="dashboard.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/grafico-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Gráficos</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural  de Avisos</h3>
+                </a>
+            </div> -->
+
+        <button class="btn-sair" onclick="limparSessao()">Sair</button>
+      </div>
+
+      <section class="dash">
+        <div class="introducao">
+          <div>
+            <h2 class="titulo-tela-iniciante">
+              Meu espaço criativo, <span class="span-ttl">meu museu</span><br />
+            </h2>
+            <p class="texto-tela-iniciante">
+              Um espaço especial para guardar memórias, cores e histórias.
+            </p>
+          </div>
+        </div>
+
+        <div class="museu">
+          <div class="card-museu">
+            <img
+              src="/assets/icon/nature.png"
+              alt=""
+              class="icon-leaf"
+            />
+            <h3 class="titulo-materiais">Meus desenhos</h3>
+          </div>
+
+          <div class="flex-pinturas">
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+            <div class="cards-pinturas">
+              <img src="materiais.png" alt="" class="img-pinturas" />
+              <h3 class="titulo-materiais">Título pintura</h3>
+              <p class="descricao-materiais">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Autor:</b> Raissa Nascimento
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <rodape class="rodape-principal">
+          <img
+            src="/assets/icon/coracao.png"
+            alt=""
+            class="img-rodape-coracao"
+          />
+          <p class="texto-rodape">Criado com carinho por Raissa Nascimento</p>
+        </rodape>
+      </section>
+    </aside>
+  </body>
+
+  <script>
+    function exibirAquarios() {
+      JSON.parse(sessionStorage.AQUARIOS).forEach((item) => {
+        document.getElementById("cardAquarios").innerHTML += `
+                    <div class="card-aquario">
+                        <div class="title-aquario">
+                            <h1>${item.descricao}</h1>
+                        </div>
+                        <div class="desc-aquario">
+                        <div class="temperatura">
+                            <p id="temp_aquario_${item.id}">-°C</p>
+                        </div>
+                        <div class="cor-alerta" id="card_${item.id}"></div>
+                    </div>
+                    </div>
+                    `;
+      });
+    }
+  </script>
+</html>

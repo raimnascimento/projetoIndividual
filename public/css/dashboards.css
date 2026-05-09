@@ -1,0 +1,581 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* MENU LATERAL */
+
+.janela {
+  display: flex;
+}
+
+.menu-lateral a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-right: 2px solid #eb7637c2;
+  padding-left: 20px;
+}
+
+.menu-dash {
+  background-color: whitesmoke;
+}
+
+.cumprimento-usuario {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #110a00;
+  font-size: 1rem;
+  font-family: "Source Code Pro", monospace;
+}
+
+.cumprimento-usuario span {
+  font-weight: 800;
+}
+
+.aba-menu {
+  width: 90%;
+  padding: 4px 8px;
+}
+
+.aba-menu:hover {
+  background-color: rgba(255, 166, 0, 0.318);
+}
+
+.flex-menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.aba-menu p {
+  color: #000000e1;
+  font-size: 1.1rem;
+}
+
+.icon-menu {
+  width: 10%;
+  opacity: .8;
+}
+
+.aba-menu h3,
+.btn-sair h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-sair {
+  padding: 12px;
+  background-color: #908c8c4b;
+  color: #000;
+  border: none;
+  font-size: 1rem;
+  font-weight: 550;
+  width: 40%;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.btn-sair:hover {
+  background-color: #908c8c73;
+}
+
+/* INTRODUÇÃO A PÁGINA DE INICIANTES */
+
+.introducao {
+  display: flex;
+  gap: 30px;
+}
+
+.textos-introducao {
+  width: 30%;
+}
+
+.titulo-tela-iniciante {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  /* width: 25%; */
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.texto-tela-iniciante {
+  /* font-family: "Source Code Pro", monospace; */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  /* width: 30%; */
+}
+
+.img-fundo{
+  width: 100%;
+}
+
+/* INDICAÇÃO DE MATERIAIS */
+
+.diferenca-materiais,
+.beneficios-arte {
+  width: 48%;
+  background-color: rgb(243, 242, 214);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  padding: 1rem 1.2rem;
+}
+
+.titulo-informacoes {
+  opacity: .9;
+}
+
+.titulo-materiais {
+  font-size: 1.3rem;
+  color: rgb(7, 60, 7);
+}
+
+b {
+  opacity: .9;
+}
+
+.materiais {
+  width: 100%;
+}
+
+.flex-materiais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards-materiais,
+.cards-pinturas {
+  background-color: rgb(243, 242, 214);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-pinturas:hover {
+  box-shadow: 0 4px 10px rgba(206, 3, 57, 0.3);
+}
+
+.cards-materiais {
+  min-height: 65vh;
+  width: 22%;
+}
+
+.img-materiais {
+  display: flex;
+  justify-self: center;
+  width: 70%;
+}
+
+.indicacao {
+  margin-top: auto;
+}
+
+/* AQUARELA VS GUACHE */
+
+.informacoes-adicionais,
+.tutoriais {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.card-informacoes  {
+  display: flex;
+  gap: 15px;
+  width: 98%;
+}
+
+.titulo-principal {
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin: 0 0 8px;
+}
+
+.explicacao {
+  font-size: 1.050rem;
+  margin: 0 0 22px;
+}
+
+.img-tinta {
+  width: 30%;
+}
+
+/* BENEFICIOS ARTE */
+
+.card-beneficios {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 95%;
+}
+
+.img-beneficios {
+  width: 5%;
+  height: 50px;
+  opacity: 0.8;
+}
+
+.explicacao {
+  font-size: .950rem;
+}
+
+/* MUSEU */
+.museu {
+  margin: 3%;
+}
+
+.card-museu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-leaf {
+  width: 60px;
+}
+
+.flex-pinturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cards-pinturas {
+  width: 18%;
+}
+
+.img-pinturas {
+  width: 100%;
+}
+
+/* RODAPE */
+.rodape-principal{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-rodape-coracao {
+  width: 20px;
+  opacity: .9;
+}
+
+.texto-rodape {
+  color: #161618;
+  opacity: .9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.label-captura {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-right .avisos {
+  width: 100%;
+  color: rgb(216, 216, 216);
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dash-right .avisos .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dash-right .avisos .container .div-form {
+  width: 95%;
+}
+
+.dash-right .avisos .container .div-form #form_postagem {
+  width: 95%;
+}
+
+.dash-right .avisos .div-form label {
+  width: 95%;
+}
+
+.dash-right .avisos .div-form input {
+  width: 95%;
+  border-radius: 5px;
+}
+
+.dash-right .avisos .div-form textarea {
+  width: 95%;
+  border: 3px solid #e6005a;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.dash-right .avisos .div-form button {
+  cursor: pointer;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  width: 120px;
+}
+
+.publicacao-btn-editar {
+  cursor: pointer;
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 8px;
+  color: white;
+  background-color: #e6005a;
+  width: 80px;
+}
+
+.publicacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: 3px solid #e6005a;
+  padding: 20px;
+}
+
+.publicacao>*:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+
+.div-results {
+  width: 100%;
+}
+
+.div-results .feed-container {
+  background-color: #212124;
+  border-radius: 5px;
+  margin-bottom: 80px;
+}
+
+.div-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.div-buttons>* {
+  margin-left: 30px;
+}
+
+/* pagina graficos */
+
+
+
+
+
+.dash {
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: 20%;
+  background-color: whitesmoke;
+  height: 100vh;
+  overflow: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+  align-items: center;
+  color: white;
+}
+
+.card-aquario {
+  margin: 2%;
+  min-width: 40%;
+  max-width: 50%;
+  width: fit-content;
+  flex-wrap: wrap;
+  display: flex;
+  /* text-align: center; */
+  height: 180px;
+  /* justify-content: right; */
+  background-color: #212124;
+  font-size: 20px;
+}
+
+.card-aquario h1 {
+  width: fit-content;
+}
+
+.card-aquario p {
+  margin: 0;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.desc-aquario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.desc-aquario .cor-alerta {
+  width: 30px;
+}
+
+.title-aquario {
+  width: 100%;
+}
+
+
+.cards h1 {
+  font-size: 22px;
+  border-bottom: solid white 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+.temperatura,
+.umidade {
+  margin: 5px;
+  margin-left: 20px;
+  width: 75%;
+}
+
+.cor-alerta {
+  width: 13%;
+  height: 30%;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 30% 0 30%;
+}
+
+.graph {
+  width: 70%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.tituloGraficos {
+  color: rgb(216, 216, 216);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-chart {
+  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #e6005a;
+  background-color: white;
+  margin: 5px;
+  border-radius: 3px;
+  cursor: pointer
+}
+
+.btn-pink {
+  color: white;
+  background-color: #e6005a;
+}
+
+.btn-white {
+  color: #e6005a;
+  background-color: white;
+
+}
+
+.label-captura {
+  height: 80px;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-block {
+  display: block;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* PAGINA DOS GRÁFICOS 2023 */
+
+
+
+
+
+.dash-right {
+  display: flex;
+  width: 70%;
+  height: fit-content;
+  background-color: #161618;
+  position: relative;
+  top: 0;
+  left: 25%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.header-left h1 {
+  color: #32b9cd;
+}
+
+
+

@@ -1,0 +1,181 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu mundo em tinta | Impressionismo</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+        <link rel="icon" href="../assets/icon/iconpallete.png">
+        <link rel="stylesheet" href="/../css/arte.css">
+        <link rel="stylesheet" href="/../css/dashboards.css" />
+        <link rel="stylesheet" href="/../css/estilo.css" />
+
+        <script src="../js/sessao.js"></script>
+        <script src="../js/alerta.js"></script>
+    </head>
+
+    <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+
+        <aside class="janela">
+            <div class="menu-lateral menu-dash">
+                <h1 class="titulo">Meu mundo em tinta</h1>
+
+                <div class="cumprimento-usuario">
+                    <p>Olá, <span id="b_usuario">usuário</span>!</p>
+                </div>
+
+                <div class="aba-menu">
+                    <a href="cards.html">
+                        <div class="flex-menu">
+                            <img src="/assets/icon/casa-icon.svg" alt="" class="icon-menu"><p>Como começar</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="aba-menu">
+                    <a href="tipo-arte.html">
+                        <div class="flex-menu">
+                            <img src="/assets/icon/pincel-icon.svg" alt="" class="icon-menu"><p>Impressionismo</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="aba-menu">
+                    <a href="museu.html">
+                        <div class="flex-menu">
+                            <img src="/assets/icon/museu-icon.svg" alt="" class="icon-menu"><p>Meu museu</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="aba-menu">
+                    <a href="dashboard.html">
+                        <div class="flex-menu">
+                            <img src="/assets/icon/grafico-icon.svg" alt="" class="icon-menu"><p>Gráficos</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <div class="btn-nav-white">
+                    <a href="./mural.html">
+                        <h3>Mural  de Avisos</h3>
+                    </a>
+                </div> -->
+
+                <button class="btn-sair" onclick="limparSessao()">Sair</button>
+            </div>
+
+            <section class="dash">
+                <div class="introducao-impressionismo">
+                    <div class="impressionismo">
+                        <h2 class="ttl-impressionismo">Impressionismo<br></h2>
+                        <p class="texto-impressionismo">O impressionismo foi um movimento artístico que surgiu na França no século XIX, marcado pela busca de captar a luz, o instante e as impressões visuais do momento. O nome do movimento é derivado da obra "Impressão, nascer do sol" (1872), de Claude Monet.
+                        </p>
+                        <p class="texto-impressionismo"> A luz e o movimento utilizando pinceladas soltas tornam-se o principal elemento da pintura, sendo que geralmente as telas eram pintadas ao ar livre para que o pintor pudesse capturar melhor as variações de cores da natureza.
+                        </p>
+                        <a href="https://pt.wikipedia.org/wiki/Impressionismo" target="_blank" class="btn-wikipedia">Conhecer o movimento <img src="seta.svg" alt="" class="img-btn-wiki"></a>
+                    </div>
+                    <img src="/assets/imgs/monet.png" alt="" class="img-monet">
+                </div>
+
+                <div class="monet">
+                    <div class="conteudo-monet">
+                        <h2 class="ttl-principal-monet">Claude Monet</h2>
+                        <div class="flex-monet">
+                            <div class="wiki-monet">
+                                <img src="/assets/imgs/claudemonet.jpg" alt="" class="img-claudemonet">
+                                <div class="biografia">
+                                    <p class="txt-biografia">Claude Monet foi um dos fundadores do impressionismo. Um dos mais importantes e revolucionários da história da arte. Começou com uma crítica e se tornou em um selo de inovação e estética.<br>
+                                    Monet desejava capturar a sensação visual, dissolvendo a forma dos objetos. Seu foco não era o que via, e sim como se via.</p>
+                                    <div class="flex-icons">
+                                        <img src="/assets/icon/calendario.svg" alt="" class="icons-monet">
+                                        <p class="txt-monet">1840 - 1926</p>
+                                    </div>
+                                    <div class="flex-icons">
+                                        <img src="/assets/icon/franca.svg" alt="" class="icons-monet">
+                                        <p class="txt-monet">Francês</p>
+                                    </div>
+                                    <div class="flex-icons">
+                                        <img src="/assets/icon/artista-pintando.svg" alt="" class="icons-monet">
+                                        <p class="txt-monet">Líder do Impressionismo</p>
+                                    </div>
+                                    <div class="flex-icons">
+                                        <img src="/assets/icon/localizacao.svg" alt="" class="icons-monet">
+                                        <p class="txt-monet">Giverny, França</p>
+                                    </div>
+                                    <a href="https://pt.wikipedia.org/wiki/Claude_Monet" target="_blank" class="btn-wiki-monet">Ver mais sobre Monet <img src="/assets/icon/seta.svg" alt="" class="img-btn-wiki"></a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2 class="ttl-obras-monet">Obras icônicas</h2>
+        
+                                <div class="obras-monet">
+                                    <div class="principais-obras-monet">
+                                        <img src="/assets/imgs/pintura-monet.jpg" alt="" class="img-obra-monet">
+                                        <div class="alinhamento">
+                                            <h3 class="ttl-obra-monet">Impression, Sunrise</h3>
+                                            <p class="info-obra-monet">1872</p>
+                                            <p class="info-obra-monet">Oléo sobre tela</p>
+                                        </div>
+                                    </div>
+                                    <div class="principais-obras-monet">
+                                        <img src="/assets/imgs/pintura-monet(1).jpg" alt="" class="img-obra-monet">
+                                        <div class="alinhamento">
+                                            <h3 class="ttl-obra-monet">Water Lilies</h3>
+                                            <p class="info-obra-monet">1916-1919</p>
+                                            <p class="info-obra-monet">Oléo sobre tela</p>
+                                        </div>
+                                    </div>
+                                    <div class="principais-obras-monet">
+                                        <img src="/assets/imgs/woman-with-a-parasol.jpg" alt="" class="img-obra-monet">
+                                        <div class="alinhamento">
+                                            <h3 class="ttl-obra-monet">Woman with a parasol</h3>
+                                            <p class="info-obra-monet">1875</p>
+                                            <p class="info-obra-monet">Oléo sobre tela</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <rodape class="rodape-principal">
+                    <img src="/public/assets/icon/coracao.png" alt="" class="img-rodape-coracao">
+                    <p class="texto-rodape">Criado com carinho por Raissa Nascimento</p>
+                </rodape>
+            </section>
+        </aside>
+
+    </body>
+
+    <script>
+
+        function exibirAquarios() {
+            JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+                document.getElementById("cardAquarios").innerHTML += `
+                        <div class="card-aquario">
+                            <div class="title-aquario">
+                                <h1>${item.descricao}</h1>
+                            </div>
+                            <div class="desc-aquario">
+                            <div class="temperatura">
+                                <p id="temp_aquario_${item.id}">-°C</p>
+                            </div>
+                            <div class="cor-alerta" id="card_${item.id}"></div>
+                        </div>
+                        </div>
+                        `
+            });
+        }
+
+    </script>
+
+    </html>

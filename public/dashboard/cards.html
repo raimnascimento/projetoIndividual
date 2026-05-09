@@ -1,106 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+  <head>
+    <link
+      rel="shortcut icon"
+      href="../assets/icon/favicon2.ico"
+      type="image/x-icon"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu mundo em tinta | Como começar</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="icon" href="../assets/icon/iconpallete.png" />
+    <link rel="stylesheet" href="/../css/dashboards.css" />
+    <link rel="stylesheet" href="/../css/estilo.css" />
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-</head>
+  </head>
 
-<!-- TELA DO USUÁRIO -->
+  <body onload="(validarSessao(), exibirAquarios(), atualizacaoPeriodica())">
+    <aside class="janela">
+      <div class="menu-lateral menu-dash">
+        <h1 class="titulo">Meu mundo em tinta</h1>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+        <div class="cumprimento-usuario">
+          <p>Olá, <span id="b_usuario">usuário</span>!</p>
+        </div>
 
-    <div class="janela">
-
-        <div class="header-left dash-header">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        <div class="aba-menu">
+          <a href="cards.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/casa-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Como começar</p>
             </div>
+          </a>
+        </div>
 
-            <div class="btn-nav">
-                <h3>Aquários</h3>
+        <div class="aba-menu">
+          <a href="tipo-arte.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/pincel-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Impressionismo</p>
             </div>
+          </a>
+        </div>
 
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
+        <div class="aba-menu">
+          <a href="museu.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/museu-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Meu museu</p>
             </div>
+          </a>
+        </div>
 
-            <div class="btn-nav-white">
+        <div class="aba-menu">
+          <a href="dashboard.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/grafico-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Gráficos</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- <div class="btn-nav-white">
                 <a href="./mural.html">
                     <h3>Mural de Avisos</h3>
                 </a>
-            </div>
+            </div> -->
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+        <button class="btn-sair" onclick="limparSessao()">Sair</button>
+      </div>
 
+      <section class="dash">
+        <!-- <div id="alerta">
+            </div> -->
+        <div class="introducao">
+          <div class="textos-introducao">
+            <h2 class="titulo-tela-iniciante">
+              Comece sua jornada no mundo da <span class="span-ttl">arte</span
+              ><br />
+            </h2>
+            <p class="texto-tela-iniciante">
+              A arte é para todos, e tudo que você precisa já existe dentro de
+              você: vontade, curiosidade e um espaço para se expressar.
+            </p>
+          </div>
+          <div class="img-introducao">
+            <img src="/assets/imgs/fundo.png" alt="" class="img-fundo" />
+          </div>
         </div>
 
-        <div class="dash">
-            <div id="alerta">
+        <div class="materiais">
+          <h3 class="titulo-materiais">Materiais básicos</h3>
+
+          <div class="flex-materiais">
+            <div class="cards-materiais">
+              <img src="materiais.png" alt="" class="img-materiais" />
+              <h3 class="titulo-materiais">Pincéis</h3>
+              <p class="descricao-materiais">
+                Escolha pincéis macios e de diferentes tamanhos para criar
+                traços variados. Não é necessário ter uma grande quantidade de
+                pincéis para começar.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Indicação de Pincéis:</b> Giotto - Série 500 Takion
+              </p>
             </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
+            <div class="cards-materiais">
+              <img src="materiais.png" alt="" class="img-materiais" />
+              <h3 class="titulo-materiais">Papel (Gramatura)</h3>
+              <p class="descricao-materiais">
+                Use papéis próprios para aquarela e guache, acima de 200/m².
+                Preferencialmente, a gramatura de 300/m², é necessário que o
+                papel seja mais grosso para que a utilização da água não cause
+                deformações no papel.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Indicação de papel:</b> Canson 300 g/m²
+              </p>
+            </div>
+            <div class="cards-materiais">
+              <img src="materiais.png" alt="" class="img-materiais" />
+              <h3 class="titulo-materiais">Aquarela</h3>
+              <p class="descricao-materiais">
+                A aquarela tem cores leves, transparentes e fluídas. Ideais para
+                pinturas mais delicadas.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Indicação de Aquarela:</b> Pentel Arts Water Colours - 12
+                cores
+              </p>
+            </div>
+            <div class="cards-materiais">
+              <img src="materiais.png" alt="" class="img-materiais" />
+              <h3 class="titulo-materiais">Guache</h3>
+              <p class="descricao-materiais">
+                Cores opacas e vibrantes, ideais para pinturas mais fortes e
+                marcantes.
+              </p>
+              <p class="descricao-materiais indicacao">
+                <b>Indicação de Guache:</b> Artools Guache Palette - 5 cores (Se
+                divirta criando cores novas!)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="informacoes-adicionais">
+          <div class="diferenca-materiais">
+            <h2 class="titulo-informacoes">
+              Diferença entre aquarela e guache
+            </h2>
+            <div class="card-informacoes">
+              <img
+                src="/assets/imgs/image.png"
+                alt=""
+                class="img-tinta"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Aquarela</p>
+                <p class="explicacao">
+                  A aquarela é uma técnica de pintura na qual os pigmentos são
+                  dissolvidos em água. Essa técnica exige sutileza e cuidado no
+                  processo. A aquarela é muito usada na construção de paisagens,
+                  já que é fácil realizar efeitos de atmosfera e profundidade. A
+                  água influencia muito no resultado, então exige mais prática e
+                  planejamento. Além disso, uma vez que a pincelada encontra o
+                  papel e a cor é colocada, não é possível corrigir. Por isso, a
+                  aquarela é um trabalho de execução rápida, no qual o
+                  acabamento definitivo só depende do tempo e secagem da água.
                 </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <div class="cards" id="cardAquarios">
-
+            <div class="card-informacoes">
+              <img
+                src="/assets/imgs/image.png"
+                alt=""
+                class="img-tinta"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Guache</p>
+                <p class="explicacao">
+                  O guache é uma tinta à base de água semelhante à aquarela,
+                  porém mais opaco e elaborado numa consistência mais líquida.
+                  Diferencia-se da aquarela pela sua qualidade opaca, as cores
+                  claras podem ser colocadas em cima de outras mais escuras,
+                  desde que já secas. O guache também se dilui com água (em
+                  menor quantidade) até ter uma consistência mais grossa. O
+                  guache é usado muitas vezes para desenho e ilustrações ou
+                  trabalhar em conjunto com materiais variados de desenho. Os
+                  pincéis adequados para a pintura com guache são os mesmos da
+                  aquarela.
+                </p>
+              </div>
             </div>
+          </div>
 
+          <div class="beneficios-arte">
+            <h2 class="titulo-informacoes">Benefícios para o cérebro</h2>
+            <div class="card-beneficios">
+              <img src="/assets/icon/bem-estar.svg" alt="" class="img-beneficios" />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Reduz o estresse e a ansiedade</p>
+                <p class="explicacao">
+                  Reduzem o estresse e aumentam a sensação de bem-estar,
+                  ajudando inclusive na prevenção de doenças neurodegenerativas.
+                </p>
+              </div>
+            </div>
+            <div class="card-beneficios">
+              <img
+                src="/assets/icon/cerebro.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Estimula a criatividade</p>
+                <p class="explicacao">
+                  A prática artística ativa áreas do cérebro ligadas à
+                  imaginação e percepção, favorecendo o desenvolvimento da
+                  criatividade e do pensamento inovador.
+                </p>
+              </div>
+            </div>
+            <div class="card-beneficios">
+              <img
+                src="/assets/icon/foco.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Melhora o foco e a concentração</p>
+                <p class="explicacao">
+                  Atividades criativas nos colocam em um estado de foco profundo
+                  e equilíbrio emocional.
+                </p>
+              </div>
+            </div>
+            <div class="card-beneficios">
+              <img
+                src="/assets/icon/lista-tarefas.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">
+                  Fortalece a memória e o aprendizado
+                </p>
+                <p class="explicacao">
+                  A prática artística estimula funções cognitivas como memória,
+                  atenção, imaginação e pensamento, ajudando o cérebro a
+                  registrar experiências e ampliar a capacidade de aprendizado.
+                </p>
+              </div>
+            </div>
+            <div class="card-beneficios">
+              <img
+                src="/assets/icon/analise.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Promove o bem-estar</p>
+                <p class="explicacao">
+                  A arte contribui para o equilíbrio emocional, ajudando na
+                  redução do estresse e promovendo sentimentos positivos,
+                  autoestima e qualidade de vida.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-    </div>
+        <div class="tutoriais">
+          <div class="diferenca-materiais">
+            <h2 class="titulo-informacoes">Tutorial simples</h2>
+            <div class="card-informacoes">
+              <img src="/assets/icon/um.svg" alt="" class="img-beneficios" />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Separe os materiais</p>
+                <p class="explicacao">
+                  Escolha seu papel, tintas, um paninho e potes com água.
+                </p>
+              </div>
+            </div>
+            <div class="card-informacoes">
+              <img
+                src="/assets/icon/dois.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Faça um esboço leve</p>
+                <p class="explicacao">
+                  Use um lápis para rascunhar a sua ideia no papel.
+                </p>
+              </div>
+            </div>
+            <div class="card-informacoes">
+              <img
+                src="/assets/icon/tres.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Umedeça levemente a folha</p>
+                <p class="explicacao">
+                  Com um pincel limpo, molhe na água, tire o excesso e faça uma
+                  pequena camada em toda a folha.
+                </p>
+              </div>
+            </div>
+            <div class="card-informacoes">
+              <img
+                src="/assets/icon/quatro.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Aplique as cores</p>
+                <p class="explicacao">
+                  Comece pelas áreas mais claras e construa camadas aos poucos
+                </p>
+              </div>
+            </div>
+            <div class="card-informacoes">
+              <img
+                src="/assets/icon/cinco.svg"
+                alt=""
+                class="img-beneficios"
+              />
+              <div class="tinta-texto">
+                <p class="titulo-principal">Deixe secar e observe</p>
+                <p class="explicacao">
+                  Confie no processo e se surpreenda com cada criação!
+                </p>
+              </div>
+            </div>
+          </div>
 
-</body>
+          <div class="video-tutorial">
+            <iframe
+              width="650"
+              height="450"
+              src="https://www.youtube.com/embed/SkiM_fJiS-g?si=8s8Ghan2fvTvSmXz"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
 
-<script>
+        <rodape class="rodape-principal">
+          <img
+            src="/assets/icon/coracao.png"
+            alt=""
+            class="img-rodape-coracao"
+          />
+          <p class="texto-rodape">Criado com carinho por Raissa Nascimento</p>
+        </rodape>
+      </section>
+    </aside>
+  </body>
 
+  <script>
     function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
+      JSON.parse(sessionStorage.AQUARIOS).forEach((item) => {
+        document.getElementById("cardAquarios").innerHTML += `
                     <div class="card-aquario">
                         <div class="title-aquario">
                             <h1>${item.descricao}</h1>
@@ -112,10 +413,8 @@
                         <div class="cor-alerta" id="card_${item.id}"></div>
                     </div>
                     </div>
-                    `
-        });
+                    `;
+      });
     }
-
-</script>
-
+  </script>
 </html>
