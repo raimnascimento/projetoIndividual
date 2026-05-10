@@ -44,11 +44,6 @@
       </header>
 
       <div class="container-login">
-        <div class="alerta_erro">
-          <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
-          </div> 
-        </div>
 
         <div class="card card-login">
           <div class="lado-esquerdo">
@@ -73,6 +68,13 @@
           </div>
 
           <div class="lado-direito">
+
+            <div class="alerta_erro">
+              <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+              </div> 
+            </div>
+
             <div class="formulario">
               <div class="campo">
                 <span class="campo-login">Nome:</span>
@@ -161,11 +163,15 @@
       cardErro.style.display = "block";
       erro = true;
     } else if (!emailVar.includes("@") || !emailVar.includes(".")) {
-      mensagem_erro.innerHTML = `Por gentileza, insira um e-mail válido!`;
+      mensagem_erro.innerHTML = `Por gentileza, insira um e-mail válido que contenha "@"" e "."!`;
       cardErro.style.display = "block";
       erro = true;
     } else if (senhaVar != confirmacaoSenhaVar) {
       mensagem_erro.innerHTML = `Revise os campos, as senhas informadas estão diferentes!`;
+      cardErro.style.display = "block";
+      erro = true;
+    } else if (contatoArteVar == 0) {
+      mensagem_erro.innerHTML = `Por gentileza, preencha se você possui contato com a arte.`;
       cardErro.style.display = "block";
       erro = true;
     }
