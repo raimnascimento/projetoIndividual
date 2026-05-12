@@ -12,7 +12,7 @@ CONSTRAINT chkContatoArte CHECK(contatoArte IN('Sim', 'Não'))
 
 CREATE TABLE autor (
 id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50),
+nome VARCHAR(100),
 tipoAutor VARCHAR(20),
 CONSTRAINT fkAutorTipo CHECK(tipoAutor IN('Proprietário', 'Família'))
 );
@@ -28,9 +28,27 @@ CONSTRAINT fkObraAutor FOREIGN KEY (fkAutor) REFERENCES autor(id)
 
 -- A ideia é fazer com que a cada login, faça um insert automático nessa tabela para depois possívelmente usar na Dashboard
 CREATE TABLE acesso (
-id INT PRIMARY KEY AUTO_INCREMENT,
-data_acesso DATETIME DEFAULT CURRENT_TIMESTAMP
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    data_acesso DATETIME DEFAULT CURRENT_TIMESTAMP,
+    fkUsuario INT,
+    CONSTRAINT fkAcessoUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
+
+SELECT * FROM acesso;
+
+INSERT INTO acesso (data_acesso, fkUsuario) VALUES 
+('2026-05-06 10:30:00', 1),
+('2026-05-06 14:15:00', 2),
+('2026-05-07 09:00:00', 3),
+('2026-05-07 11:20:00', 1),
+('2026-05-07 16:45:00', 4),
+('2026-05-08 13:10:00', 5),
+('2026-05-08 18:00:00', 2),
+('2026-05-09 10:00:00', 7),
+('2026-05-09 15:30:00', 6),
+('2026-05-09 20:00:00', 1),
+('2026-05-10 08:30:00', 5),
+('2026-05-10 11:00:00', 2);
 
 INSERT INTO autor (nome, tipoAutor) VALUES
 ('Raissa Nascimento', 'Proprietário'),
@@ -60,3 +78,6 @@ ELSE 'Alguém da minha família pintou isso'
 END AS 'Origem da obra'
 FROM obra AS o
 	JOIN autor AS a ON o.fkAutor = a.id;
+    
+    
+select * from usuario;

@@ -97,6 +97,20 @@ body {
   background-color: #908c8c73;
 }
 
+.grafico-dashboard {
+    width: 82%; 
+    position: relative;
+    top: 0;
+    left: 18%; 
+    background-color: whitesmoke;
+    height: 100vh;
+    overflow: auto;
+
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
 /* INTRODUÇÃO A PÁGINA DE INICIANTES */
 
 .introducao {

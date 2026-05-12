@@ -79,7 +79,53 @@ function cadastrar(req, res) {
     }
 }
 
+function registrarAcesso(idUsuario) {
+    var instrucaoSql = `
+        INSERT INTO acesso (fkUsuario) VALUES (${idUsuario});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function registrarAcesso(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else {
+        usuarioModel.registrarAcesso(idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o registro de acesso! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
+function buscarAcessos(req, res) {
+    usuarioModel.buscarAcessosGrafico().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    registrarAcesso,
+    buscarAcessos
 }
+
+    

@@ -130,6 +130,18 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
+                    fetch("/usuarios/registrarAcesso", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            idUsuarioServer: json.id
+                        })
+                    }).then(res => {
+                        console.log("Acesso registrado com sucesso!");
+                    }).catch(err => {
+                        console.log("Erro ao registrar acesso:", err);
+                    });
+
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
                     }, 1000); // apenas para exibir o loading
