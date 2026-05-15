@@ -33,26 +33,26 @@ function cadastrar(nome, email, senha, contatoArte) {
 }
 
 function registrarAcesso(idUsuario) {
-    var instrucaoSql = `
+  var instrucaoSql = `
         INSERT INTO acesso (fkUsuario) VALUES (${idUsuario});
     `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-  }
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
 
 function buscarAcessosGrafico() {
-    var instrucaoSql = `
+  var instrucaoSql = `
         SELECT count(id) as qtd, DATE_FORMAT(data_acesso, '%d/%m') as dia 
         FROM acesso 
         GROUP BY dia 
         ORDER BY dia ASC LIMIT 7;
     `;
-    return database.executar(instrucaoSql);
+  return database.executar(instrucaoSql);
 }
 
 module.exports = {
   autenticar,
   cadastrar,
   registrarAcesso,
-  buscarAcessosGrafico
+  buscarAcessosGrafico,
 };

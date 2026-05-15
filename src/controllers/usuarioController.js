@@ -117,7 +117,7 @@ function buscarAcessos(req, res) {
         }
     }).catch(function (erro) {
         res.status(500).json(erro.sqlMessage);
-    });
+    }); 
 }
 
 
