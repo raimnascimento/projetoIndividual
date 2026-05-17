@@ -4,9 +4,22 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+    var msgConversao = document.getElementById("msgConversao");
 
     if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
+        if (b_usuario != null) {
+            b_usuario.innerHTML = nome;
+        }
+
+        // conversão do ID do usuário para binário
+        let decimal = sessionStorage.ID_USUARIO;
+
+        if (decimal != undefined && msgConversao != null) {
+            decimal = Number(decimal);
+            let binario = decimal.toString(2);
+            msgConversao.innerHTML = `${binario}`;
+        }
+
     } else {
         window.location = "../login.html";
     }

@@ -34,8 +34,9 @@
                 <h1 class="titulo">Meu mundo em tinta</h1>
 
                 <div class="cumprimento-usuario">
-                    <p>Olá, <span id="b_usuario">usuário</span>!</p>
-                </div>
+                <p>Olá, <span id="b_usuario">usuário</span>!</p>
+                <p class="txt-codigo">Código de Artista: <span id="msgConversao"></span></p>
+            </div>
 
                 <div class="aba-menu">
                     <a href="cards.html">
@@ -96,8 +97,9 @@
 </html>
 
 <script>
-   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+//    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    validarSessao();
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico();
