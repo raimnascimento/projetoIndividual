@@ -60,7 +60,6 @@ function cadastrar(req, res) {
         res.status(400).send("Seu contato com a arte está undefined!");
     } else {
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha, contatoArte)
             .then(
                 function (resultado) {
