@@ -138,14 +138,12 @@ body {
 .titulo-tela-iniciante {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
-  /* width: 25%; */
   line-height: 1.1;
   font-weight: 700;
   margin-bottom: 25px;
 }
 
 .texto-tela-iniciante {
-  /* font-family: "Source Code Pro", monospace; */
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 25px;
@@ -420,10 +418,10 @@ b {
   padding-top: 10px;
 }
 
-/* 
+
 canvas {
   width: 100% !important;
   height: 100% !important;
-} */
+}
 
 
