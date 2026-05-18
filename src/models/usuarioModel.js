@@ -41,10 +41,7 @@ function registrarAcesso(idUsuario) {
 
 function buscarAcessosGrafico() {
   var instrucaoSql = `
-        SELECT count(*) as qtd, DATE_FORMAT(data_acesso, '%d/%m') as dia 
-        FROM acesso 
-        GROUP BY dia 
-        ORDER BY dia ASC LIMIT 7;
+        SELECT * FROM vwDashboard;
     `;
   return database.executar(instrucaoSql);
 }
