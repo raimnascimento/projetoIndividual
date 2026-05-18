@@ -98,8 +98,7 @@
       </div>
 
       <section class="dash">
-        <!-- <div id="alerta">
-            </div> -->
+
         <div class="introducao">
           <div class="textos-introducao">
             <h2 class="titulo-tela-iniciante">
@@ -123,56 +122,7 @@
         <div class="materiais">
           <h3 class="titulo-materiais">Materiais básicos</h3>
 
-          <div class="flex-materiais">
-            <div class="cards-materiais">
-              <img src="/assets/imgs/pinceis.jpg" alt="" class="img-materiais" />
-              <h3 class="titulo-materiais">Pincéis</h3>
-              <p class="descricao-materiais">
-                Escolha pincéis macios e de diferentes tamanhos para criar
-                traços variados. Não é necessário ter uma grande quantidade de
-                pincéis para começar.
-              </p>
-              <p class="descricao-materiais indicacao">
-                <b>Indicação de Pincéis:</b> Giotto - Série 500 Takion
-              </p>
-            </div>
-            <div class="cards-materiais">
-              <img src="/assets/imgs/canson.jpg" alt="" class="img-materiais" />
-              <h3 class="titulo-materiais">Papel (Gramatura)</h3>
-              <p class="descricao-materiais">
-                Use papéis próprios para aquarela e guache, acima de 200/m².
-                Preferencialmente, a gramatura de 300/m², é necessário que o
-                papel seja mais grosso para que a utilização da água não cause
-                deformações no papel.
-              </p>
-              <p class="descricao-materiais indicacao">
-                <b>Indicação de papel:</b> Canson 300 g/m²
-              </p>
-            </div>
-            <div class="cards-materiais">
-              <img src="/assets/imgs/aquarela.jpg" alt="" class="img-materiais" />
-              <h3 class="titulo-materiais">Aquarela</h3>
-              <p class="descricao-materiais">
-                A aquarela tem cores leves, transparentes e fluídas. Ideais para
-                pinturas mais delicadas.
-              </p>
-              <p class="descricao-materiais indicacao">
-                <b>Indicação de Aquarela:</b> Pentel Arts Water Colours - 12
-                cores
-              </p>
-            </div>
-            <div class="cards-materiais">
-              <img src="/assets/imgs/guache.jpg" alt="" class="img-materiais" />
-              <h3 class="titulo-materiais">Guache</h3>
-              <p class="descricao-materiais">
-                Cores opacas e vibrantes, ideais para pinturas mais fortes e
-                marcantes.
-              </p>
-              <p class="descricao-materiais indicacao">
-                <b>Indicação de Guache:</b> Artools Guache Palette - 5 cores (Se
-                divirta criando cores novas!)
-              </p>
-            </div>
+          <div id="vetor_materiais" class="flex-materiais">
           </div>
         </div>
 
@@ -226,78 +176,10 @@
             </div>
           </div>
 
-          <div class="beneficios-arte">
-            <h2 class="titulo-informacoes">Benefícios para o cérebro</h2>
-            <div class="card-beneficios">
-              <img src="/assets/icon/bem-estar.svg" alt="" class="img-beneficios" />
-              <div class="tinta-texto">
-                <p class="titulo-principal">Reduz o estresse e a ansiedade</p>
-                <p class="explicacao">
-                  Reduzem o estresse e aumentam a sensação de bem-estar,
-                  ajudando inclusive na prevenção de doenças neurodegenerativas.
-                </p>
-              </div>
-            </div>
-            <div class="card-beneficios">
-              <img
-                src="/assets/icon/cerebro.svg"
-                alt=""
-                class="img-beneficios"
-              />
-              <div class="tinta-texto">
-                <p class="titulo-principal">Estimula a criatividade</p>
-                <p class="explicacao">
-                  A prática artística ativa áreas do cérebro ligadas à
-                  imaginação e percepção, favorecendo o desenvolvimento da
-                  criatividade e do pensamento inovador.
-                </p>
-              </div>
-            </div>
-            <div class="card-beneficios">
-              <img
-                src="/assets/icon/foco.svg"
-                alt=""
-                class="img-beneficios"
-              />
-              <div class="tinta-texto">
-                <p class="titulo-principal">Melhora o foco e a concentração</p>
-                <p class="explicacao">
-                  Atividades criativas nos colocam em um estado de foco profundo
-                  e equilíbrio emocional.
-                </p>
-              </div>
-            </div>
-            <div class="card-beneficios">
-              <img
-                src="/assets/icon/lista-tarefas.svg"
-                alt=""
-                class="img-beneficios"
-              />
-              <div class="tinta-texto">
-                <p class="titulo-principal">
-                  Fortalece a memória e o aprendizado
-                </p>
-                <p class="explicacao">
-                  A prática artística estimula funções cognitivas como memória,
-                  atenção, imaginação e pensamento, ajudando o cérebro a
-                  registrar experiências e ampliar a capacidade de aprendizado.
-                </p>
-              </div>
-            </div>
-            <div class="card-beneficios">
-              <img
-                src="/assets/icon/analise.svg"
-                alt=""
-                class="img-beneficios"
-              />
-              <div class="tinta-texto">
-                <p class="titulo-principal">Promove o bem-estar</p>
-                <p class="explicacao">
-                  A arte contribui para o equilíbrio emocional, ajudando na
-                  redução do estresse e promovendo sentimentos positivos,
-                  autoestima e qualidade de vida.
-                </p>
-              </div>
+            <div class="beneficios-arte">
+              <h2 class="titulo-informacoes">Benefícios para o cérebro</h2>
+
+              <div id="vetor_beneficios"></div>
             </div>
           </div>
         </div>
@@ -405,5 +287,79 @@
 
   </html>
 <script>
-    
+    const meusMateriais = [
+      {
+        material: 'Pincéis',
+        descricao: 'Escolha pincéis macios e de diferentes tamanhos para criar traços variados. Não é necessário ter uma grande quantidade de pincéis para começar.',
+        indicacao: 'Giotto - Série 500 Takion',
+        imagem: '/assets/imgs/pinceis.jpg',
+      },
+      {
+        material: 'Papel (Gramatura)',
+        descricao: 'Use papéis próprios para aquarela e guache, acima de 200/m². Preferencialmente, a gramatura de 300/m², é necessário que o papel seja mais grosso para que a utilização da água não cause deformações no papel.',
+        indicacao: 'Canson 300 g/m²',
+        imagem: '/assets/imgs/canson.jpg',
+      },
+      {
+        material: 'Aquarela',
+        descricao: 'A aquarela tem cores leves, transparentes e fluídas. Ideais para pinturas mais delicadas.',
+        indicacao: 'Pentel Arts Water Colours - 12 cores',
+        imagem: '/assets/imgs/aquarela.jpg',
+      },
+      {
+        material: 'Guache',
+        descricao: 'Cores opacas e vibrantes, ideais para pinturas mais fortes e marcantes.',
+        indicacao: 'Artools Guache Palette - 5 cores (Se divirta criando cores novas!)',
+        imagem: '/assets/imgs/guache.jpg',
+      }
+    ];
+
+    for (let i = 0; i < meusMateriais.length; i++) {
+      vetor_materiais.innerHTML += `<div class="cards-materiais">
+              <img src="${meusMateriais[i].imagem}" alt="" class="img-materiais" />
+              <h3 class="titulo-materiais">${meusMateriais[i].material}</h3>
+              <p class="descricao-materiais">${meusMateriais[i].descricao}</p>
+              <p class="descricao-materiais indicacao"><b>Indicação de Pincéis:</b> ${meusMateriais[i].indicacao}</p>
+            </div>`;
+    }
+
+
+    const beneficios = [
+      {
+        titulo: 'Reduz o estresse e a ansiedade',
+        descricao: 'Reduzem o estresse e aumentam a sensação de bem-estar, ajudando inclusive na prevenção de doenças neurodegenerativas.',
+        imagem: '/assets/icon/bem-estar.svg'
+      },
+      {
+        titulo: 'Estimula a criatividade',
+        descricao: 'A prática artística ativa áreas do cérebro ligadas à imaginação e percepção, favorecendo o desenvolvimento da criatividade e do pensamento inovador.',
+        imagem: '/assets/icon/cerebro.svg'
+      },
+      {
+        titulo: 'Melhora o foco e a concentração',
+        descricao: 'Atividades criativas nos colocam em um estado de foco profundo e equilíbrio emocional.',
+        imagem: '/assets/icon/foco.svg'
+      },
+      {
+        titulo: 'Fortalece a memória e o aprendizado',
+        descricao: 'A prática artística estimula funções cognitivas como memória, atenção, imaginação e pensamento, ajudando o cérebro a registrar experiências e ampliar a capacidade de aprendizado.',
+        imagem: '/assets/icon/lista-tarefas.svg'
+      },
+      {
+        titulo: 'Promove o bem-estar',
+        descricao: 'A arte contribui para o equilíbrio emocional, ajudando na redução do estresse e promovendo sentimentos positivos, autoestima e qualidade de vida.',
+        imagem: '/assets/icon/analise.svg'
+      },
+    ];
+
+    for (let i = 0; i < beneficios.length; i++) {
+      vetor_beneficios.innerHTML += `<div class="card-beneficios">
+                <img src="${beneficios[i].imagem}" alt="" class="img-beneficios" />
+                <div class="tinta-texto">
+                  <p class="titulo-principal">${beneficios[i].titulo}</p>
+                  <p class="explicacao">${beneficios[i].descricao}</p>
+                </div>
+              </div>`;
+    }
+
 </script>

@@ -117,31 +117,7 @@
                             <div>
                                 <h2 class="ttl-obras-monet">Obras icônicas</h2>
         
-                                <div class="obras-monet">
-                                    <div class="principais-obras-monet">
-                                        <img src="/assets/imgs/pintura-monet.jpg" alt="" class="img-obra-monet">
-                                        <div class="alinhamento">
-                                            <h3 class="ttl-obra-monet">Impression, Sunrise</h3>
-                                            <p class="info-obra-monet">1872</p>
-                                            <p class="info-obra-monet">Oléo sobre tela</p>
-                                        </div>
-                                    </div>
-                                    <div class="principais-obras-monet">
-                                        <img src="/assets/imgs/pintura-monet(1).jpg" alt="" class="img-obra-monet">
-                                        <div class="alinhamento">
-                                            <h3 class="ttl-obra-monet">Water Lilies</h3>
-                                            <p class="info-obra-monet">1916-1919</p>
-                                            <p class="info-obra-monet">Oléo sobre tela</p>
-                                        </div>
-                                    </div>
-                                    <div class="principais-obras-monet">
-                                        <img src="/assets/imgs/woman-with-a-parasol.jpg" alt="" class="img-obra-monet">
-                                        <div class="alinhamento">
-                                            <h3 class="ttl-obra-monet">Woman with a parasol</h3>
-                                            <p class="info-obra-monet">1875</p>
-                                            <p class="info-obra-monet">Oléo sobre tela</p>
-                                        </div>
-                                    </div>
+                                <div id="vetor_obras" class="obras-monet">
                                 </div>
                             </div>
                         </div>
@@ -160,5 +136,37 @@
 
     </html>
 <script>
+    const obrasMonet = [
+        {
+            titulo: 'Impression, Sunrise',
+            data: '1872',
+            tecnica: 'Oléo sobre tela',
+            imagem: '/assets/imgs/pintura-monet.jpg'
+        },
+        {
+            titulo: 'Water Lilies',
+            data: '1916-1919',
+            tecnica: 'Oléo sobre tela',
+            imagem: '/assets/imgs/pintura-monet(1).jpg'
+        },
+        {
+            titulo: 'Woman with a parasol',
+            data: '1875',
+            tecnica: 'Oléo sobre tela',
+            imagem: '/assets/imgs/woman-with-a-parasol.jpg'
+        },
+    ];
+
+    for (let i = 0; i < obrasMonet.length; i++) {
+        vetor_obras.innerHTML += `
+        <div class="principais-obras-monet">
+            <img src="${obrasMonet[i].imagem}" alt="" class="img-obra-monet">
+            <div class="alinhamento">
+                <h3 class="ttl-obra-monet">${obrasMonet[i].titulo}</h3>
+                <p class="info-obra-monet">${obrasMonet[i].data}</p>
+                <p class="info-obra-monet">${obrasMonet[i].tecnica}</p>
+            </div>
+        </div>`;        
+    }
 
 </script>
