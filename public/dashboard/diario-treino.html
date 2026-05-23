@@ -153,49 +153,6 @@
   </body>
 </html>
 <script>
-  // var anotacoesDiario = {
-  //     tecnica: [],
-  //     tempoTreino: [],
-  //     anotacoes: []
-  // }
-
-  // function registrarTreino() {
-  //   let tecnicaUtilizada = ipt_tecnica.value.trim();
-  //   let tempoGasto = ipt_tempoGasto.value.trim();
-  //   let anotacao = ipt_anotacoes.value.trim();
-  //   erros = false;
-
-  //   if (tempoGasto.length == 0 && anotacao.length == 0) {
-  //     mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha o tempo gasto e suas anotações.</span><br>`;
-  //     erros = true;
-  //   } else if (tempoGasto.length == 0) {
-  //     mensagem_erro.innerHTML = `<span  id="span_erro">Por gentileza, preencha o tempo gasto.</span><br>`;
-  //     erros = true;
-  //   } else if (anotacao == 0) {
-  //     mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha suas anotações.</span><br>`;
-  //     erros = true;
-  //   }
-
-  //   if (erros == false) {
-  //     mensagem_erro.innerHTML = '<span style="display:none" id="span_erro"></span>';
-
-  //     anotacoesDiario.tecnica.push(tecnicaUtilizada);
-  //     anotacoesDiario.tempoTreino.push(tempoGasto);
-  //     anotacoesDiario.anotacoes.push(anotacao);
-
-  //     vetor_diario.innerHTML = '';
-
-  //     for (let i = 0; i < anotacoesDiario.tecnica.length; i++) {
-  //       vetor_diario.innerHTML += `<div class="card-diario">
-  //           <h3 class="ttl-diario">${anotacoesDiario.tecnica[i]}</h3>
-  //           <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${anotacoesDiario.tempoTreino[i]}</p>
-  //           <p class="descricao-diario">${anotacoesDiario.anotacoes[i]}</p>
-  //         </div>`;
-  //     }
-  //   }
-
-  // }
-
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
