@@ -144,12 +144,7 @@
     var contatoArteVar = codigo_input.value;
     let erro = false;
 
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
+    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
       mensagem_erro.innerHTML = `Por gentileza, preencha os campos corretamente para efetuar o seu cadastro.`;
       cardErro.style.display = "block";
       erro = true;

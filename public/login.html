@@ -164,18 +164,23 @@
                    
                     if (tentativas == 1) {
                         cardErro.style.display = "block"
-                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente. Por gentileza, verifique os campos. Você possui ${tentativas} tentativa.`;
+                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente. 
+                        Por gentileza, verifique os campos.
+                        Você possui ${tentativas} tentativa.`;
                         finalizarAguardar();
                         return false;
                     }
                     if (tentativas > 0) {
                         cardErro.style.display = "block"
-                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente. Por gentileza, verifique os campos. Você possui ${tentativas} tentativas.`;
+                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente. 
+                        Por gentileza, verifique os campos.
+                        Você possui ${tentativas} tentativas.`;
                         finalizarAguardar();
                         return false;
                     } else {
                         cardErro.style.display = "block"
-                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente. Infelizmente você zerou suas tentativas e seu acesso foi bloqueado.`;
+                        mensagem_erro.innerHTML = `O e-mail ou senha foram informados incorretamente.
+                        Infelizmente você zerou suas tentativas e seu acesso foi bloqueado.`;
                         btn_entrar.disabled = true; 
                         btn_entrar.style.cursor = "not-allowed";
                         finalizarAguardar();

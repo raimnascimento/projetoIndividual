@@ -100,7 +100,8 @@ function registrarAcesso(req, res) {
             ).catch(
             function (erro) {
                 console.log(erro);
-                console.log("\nHouve um erro ao realizar o registro de acesso! Erro: ", erro.sqlMessage);
+                console.log("\nHouve um erro ao realizar o registro de acesso! Erro: ",
+                    erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
         );

@@ -72,6 +72,19 @@
         </div>
 
         <div class="aba-menu">
+          <a href="diario-treino.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/icon-paleta.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Diário de treino</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
           <a href="dashboard.html">
             <div class="flex-menu">
               <img
@@ -138,60 +151,70 @@
       {
         titulo: 'Flores na janela',
         descricao: 'Uma janela em fundo rosado com flores vermelhas na base',
+        tecnica: 'aquarela',
         imagem: 'flores1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Casa entre o verde',
         descricao: 'Uma pequena casa com telhado alaranjado cercada por árvores e folhas, no meio de uma paisagem natural.',
+        tecnica: 'aquarela',
         imagem: 'janela2.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Paisagem tranquila',
         descricao: 'Um campo aberto com céu leve e calmo',
+        tecnica: 'aquarela',
         imagem: 'paisagem1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Céu em aquarela',
         descricao: 'Cores diluídas formando um céu suave',
+        tecnica: 'aquarela',
         imagem: 'ceu1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Fim de tarde',
         descricao: 'O céu mudando de cor lentamente',
+        tecnica: 'aquarela',
         imagem: 'entardecer1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Flores delicadas',
         descricao: 'Pinceladas leves tentando capturar o movimento',
+        tecnica: 'aquarela',
         imagem: 'flores2.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Silêncio do entardecer',
         descricao: 'Árvores escuras com um céu que traz a sensação de calma antes da noite chegar.',
+        tecnica: 'aquarela',
         imagem: 'montanha1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Campo com flores',
         descricao: 'Pequenas flores espalhadas em um campo aberto',
+        tecnica: 'aquarela',
         imagem: 'campo1.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Céu verde em degradê',
         descricao: 'Floresta de pinheiros escuros com um céu em degradê de verde, com pássaros ao fundo atravessando.',
+        tecnica: 'aquarela',
         imagem: 'janela3.jpg',
         autor: 'Raissa Nascimento'
       },
       {
         titulo: 'Céu verde em degradê',
         descricao: 'Floresta de pinheiros escuros com um céu em degradê de verde, com pássaros ao fundo atravessando.',
+        tecnica: 'aquarela',
         imagem: 'janela3.jpg',
         autor: 'Raissa Nascimento'
       }
@@ -202,6 +225,7 @@
               <img src="${minhasObras[i].imagem}" alt="" class="img-pinturas" />
               <h3 class="titulo-materiais">${minhasObras[i].titulo}</h3>
               <p class="descricao-materiais">${minhasObras[i].descricao}</p>
+              <p class="descricao-materiais"><b>Técnica:</b> ${minhasObras[i].tecnica}</p>
               <p class="descricao-materiais indicacao"><b>Autor:</b> ${minhasObras[i].autor}</p>
             </div>`;
     }

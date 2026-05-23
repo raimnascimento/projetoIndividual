@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu mundo em tinta | Diário de treino</title>
+
+    <link rel="icon" href="../assets/icon/iconpallete.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/../css/dashboards.css" />
+    <link rel="stylesheet" href="/../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+
+</head>
+<body onload="(validarSessao(), atualizarFeed())">
+    <aside class="janela">
+      <div class="menu-lateral menu-dash">
+        <h1 class="titulo">Meu mundo em tinta</h1>
+
+        <div class="cumprimento-usuario">
+          <p>Olá, <span id="b_usuario">usuário</span>!</p>
+          <p class="txt-codigo">Código de Artista: <span id="msgConversao"></span></p>
+        </div>
+
+        <div class="aba-menu">
+          <a href="cards.html">
+            <div class="flex-menu">
+              <img src="/assets/icon/casa-icon.svg" alt="" class="icon-menu" />
+              <p>Como começar</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="tipo-arte.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/pincel-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Impressionismo</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="museu.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/museu-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Meu museu</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="diario-treino.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/icon-paleta.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Diário de treino</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="aba-menu">
+          <a href="dashboard.html">
+            <div class="flex-menu">
+              <img
+                src="/assets/icon/grafico-icon.svg"
+                alt=""
+                class="icon-menu"
+              />
+              <p>Gráficos</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Mural  de Avisos</h3>
+                </a>
+            </div> -->
+
+        <button class="btn-sair" onclick="limparSessao()">Sair</button>
+      </div>
+
+      <section class="dash">
+        <div class="textos-introducao">
+            <h2 class="titulo-tela-iniciante">
+              Diário de <span class="span-ttl">evolução artística</span
+              ><br />
+            </h2>
+            <p class="texto-tela-iniciante">Acompanhe seu progresso e anote seus aprendizados!</p>
+        </div>
+
+        <div id="mensagem_erro">
+          <span class="alerta-erros" id="span_erro">Por gentileza, preencha os seguintes campos:</span>
+        </div>
+
+        <div class="diario">
+            <div class="campo-diario">
+                <p class="diario-tecnica">Técnica estudada:</p>
+                <select name="" id="ipt_tecnica" class="input-diario">
+                    <option value="Aquarela">Aquarela</option>
+                    <option value="Guache">Guache</option>
+                    <option value="Ambas">Ambas as técnicas</option>
+                </select>
+            </div>
+            <div class="campo-diario">
+                <p class="diario-tecnica">Tempo de treino:</p>
+                <input type="text" id="ipt_tempoGasto" class="input-diario" placeholder="Ex: 45min">
+            </div>
+            <div class="campo-diario">
+                <p class="diario-tecnica">Anotações:</p>
+                <input type="text" id="ipt_anotacoes" class="input-diario" placeholder="Descreva sua evolução...">
+            </div>
+            <button class="btn-registrar-diario" onclick="registrarTreino()">Registrar Treino</button>
+        </div>
+
+        <section class="container-diario">
+          <div class="cards-anotacoes-diario" id="vetor_diario">
+              
+          </div>
+        </section>
+
+        <rodape class="rodape-principal">
+          <img
+            src="/assets/icon/coracao.png"
+            alt=""
+            class="img-rodape-coracao"
+          />
+          <p class="texto-rodape">Criado com carinho por Raissa Nascimento</p>
+        </rodape>
+      </section>
+    </aside>
+  </body>
+</html>
+<script>
+  // var anotacoesDiario = {
+  //     tecnica: [],
+  //     tempoTreino: [],
+  //     anotacoes: []
+  // }
+
+  // function registrarTreino() {
+  //   let tecnicaUtilizada = ipt_tecnica.value.trim();
+  //   let tempoGasto = ipt_tempoGasto.value.trim();
+  //   let anotacao = ipt_anotacoes.value.trim();
+  //   erros = false;
+
+  //   if (tempoGasto.length == 0 && anotacao.length == 0) {
+  //     mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha o tempo gasto e suas anotações.</span><br>`;
+  //     erros = true;
+  //   } else if (tempoGasto.length == 0) {
+  //     mensagem_erro.innerHTML = `<span  id="span_erro">Por gentileza, preencha o tempo gasto.</span><br>`;
+  //     erros = true;
+  //   } else if (anotacao == 0) {
+  //     mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha suas anotações.</span><br>`;
+  //     erros = true;
+  //   }
+
+  //   if (erros == false) {
+  //     mensagem_erro.innerHTML = '<span style="display:none" id="span_erro"></span>';
+
+  //     anotacoesDiario.tecnica.push(tecnicaUtilizada);
+  //     anotacoesDiario.tempoTreino.push(tempoGasto);
+  //     anotacoesDiario.anotacoes.push(anotacao);
+
+  //     vetor_diario.innerHTML = '';
+
+  //     for (let i = 0; i < anotacoesDiario.tecnica.length; i++) {
+  //       vetor_diario.innerHTML += `<div class="card-diario">
+  //           <h3 class="ttl-diario">${anotacoesDiario.tecnica[i]}</h3>
+  //           <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${anotacoesDiario.tempoTreino[i]}</p>
+  //           <p class="descricao-diario">${anotacoesDiario.anotacoes[i]}</p>
+  //         </div>`;
+  //     }
+  //   }
+
+  // }
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        ipt_tempoGasto.value = "";
+        ipt_anotacoes.value = "";
+    }
+
+    function registrarTreino() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        let tecnicaUtilizada = ipt_tecnica.value.trim();
+        let tempoGasto = ipt_tempoGasto.value.trim();
+        let anotacao = ipt_anotacoes.value.trim();
+        var erros = false;
+
+        if (tempoGasto.length == 0 && anotacao.length == 0) {
+            mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha o tempo gasto e suas anotações.</span><br>`;
+            erros = true;
+        } else if (tempoGasto.length == 0) {
+            mensagem_erro.innerHTML = `<span id="span_erro">Por gentileza, preencha o tempo gasto.</span><br>`;
+            erros = true;
+        } else if (anotacao.length == 0) {
+            mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha suas anotações.</span><br>`;
+            erros = true;
+        }
+
+        if (erros == false) {
+            mensagem_erro.innerHTML = '<span style="display:none" id="span_erro"></span>';
+
+            var corpo = {
+                tecnica: tecnicaUtilizada,
+                tempoTreino: tempoGasto,
+                anotacoes: anotacao
+            }
+
+            fetch(`/diario/publicar/${idUsuario}`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(corpo)
+            }).then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // window.alert("Treino registrado com sucesso no banco de dados!");
+                    limparFormulario();
+                    atualizarFeed();
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+
+        return false;
+    }
+
+    function atualizarFeed() {
+        fetch("/diario/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("vetor_diario");
+                    feed.innerHTML = "<span>Nenhum treino registrado ainda.</span>";
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos do banco: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("vetor_diario");
+                    feed.innerHTML = "";
+                    
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        feed.innerHTML += `
+                        <div class="card-diario">
+                            <h3 class="ttl-diario">${publicacao.tecnica}</h3>
+                            <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${publicacao.tempoTreino}</p>
+                            <p class="descricao-diario">${publicacao.anotacoes}</p>
+                            <p class="descricao-diario" style="font-size: 11px; color: #888;">Artista: ${publicacao.nome}</p>
+                        </div>`;
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+</script>
