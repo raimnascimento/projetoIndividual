@@ -324,6 +324,12 @@
             }]
         };
 
+        var totalTreinos = 0;
+
+        for (var i = 0; i < dadosBanco.length; i++) {
+            totalTreinos = totalTreinos + dadosBanco[i].quantidade;
+        }
+
         const config = {
             type: 'doughnut',
             data: dadosGrafico,
@@ -342,6 +348,17 @@
                                 weight: '500'
                             },
                             padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(item) {
+                                var quantidadeFatia = item.raw;
+                                var nomeFatia = item.label;
+                                var porcentagem = (quantidadeFatia * 100) / totalTreinos;
+                                
+                                return " " + nomeFatia + ": " + porcentagem.toFixed(1) + "%";
+                            }
                         }
                     }
                 }

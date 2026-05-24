@@ -76,9 +76,8 @@ function buscarTecnicaFavorita(idUsuario) {
 function buscarTecnicas(idUsuario) {
     console.log("ACESSEI O DIARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
     var instrucaoSql = `
-        SELECT tecnica, COUNT(tecnica) AS quantidade FROM registrosDiario
-            WHERE fkUsuario = ${idUsuario}
-                GROUP BY tecnica;
+        SELECT tecnica, quantidade FROM vw_dashTecnica
+            WHERE fkUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
