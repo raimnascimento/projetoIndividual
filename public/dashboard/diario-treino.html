@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/../css/estilo.css" />
 
     <script src="../js/sessao.js"></script>
-    <script src="../js/alerta.js"></script>
 
 </head>
 <body onload="(validarSessao(), atualizarFeed())">
@@ -125,7 +124,13 @@
             </div>
             <div class="campo-diario">
                 <p class="diario-tecnica">Tempo de treino:</p>
-                <input type="text" id="ipt_tempoGasto" class="input-diario" placeholder="Ex: 45min">
+                <div style="display: flex; gap: 5px;">
+                    <input type="number" id="ipt_tempoGasto" class="input-diario" placeholder="Ex: 45" style="width: 80px;">
+                    <select id="slc_tipo_tempo" class="input-diario">
+                        <option value="minutos">Minutos</option>
+                        <option value="horas">Horas</option>
+                    </select>
+                </div>
             </div>
             <div class="campo-diario">
                 <p class="diario-tecnica">Anotações:</p>
@@ -166,6 +171,9 @@
         let tecnicaUtilizada = ipt_tecnica.value.trim();
         let tempoGasto = ipt_tempoGasto.value.trim();
         let anotacao = ipt_anotacoes.value.trim();
+        let tempoDigitado = Number(ipt_tempoGasto.value.trim());
+        let tipoTempo = slc_tipo_tempo.value;
+        let tempoEmMinutos = tempoDigitado;
         var erros = false;
 
         if (tempoGasto.length == 0 && anotacao.length == 0) {
@@ -179,12 +187,16 @@
             erros = true;
         }
 
+        if (tipoTempo == "horas") {
+            tempoEmMinutos = tempoDigitado * 60; 
+        }
+
         if (erros == false) {
             mensagem_erro.innerHTML = '<span style="display:none" id="span_erro"></span>';
 
             var corpo = {
                 tecnica: tecnicaUtilizada,
-                tempoTreino: tempoGasto,
+                tempoTreino: tempoEmMinutos,
                 anotacoes: anotacao
             }
 
@@ -215,7 +227,9 @@
     }
 
     function atualizarFeed() {
-        fetch("/diario/listar").then(function (resposta) {
+      var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/diario/listar/${idUsuario}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("vetor_diario");
@@ -232,10 +246,27 @@
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
 
+                        let minutosTotais = Number(publicacao.tempoTreino);
+                        let horas = Math.floor(minutosTotais / 60);
+                        let minutosRestantes = minutosTotais % 60;
+
+                        let tempoFormatado = "";
+                        if (horas > 0) {
+                            tempoFormatado += `${horas}h `;
+                        }
+                        if (minutosRestantes > 0 || minutosTotais == 0) {
+                            tempoFormatado += `${minutosRestantes}min`;
+                        } else if (horas > 0 && minutosRestantes == 0) {
+                            tempoFormatado = `${horas}h`;
+                        }
+
+                        let dataDoRegistro = publicacao.dataRegistroFormatada || "Data não informada";
+
                         feed.innerHTML += `
                         <div class="card-diario">
                             <h3 class="ttl-diario">${publicacao.tecnica}</h3>
-                            <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${publicacao.tempoTreino}</p>
+                            <p class="descricao-diario" style="font-size: 11px; color: #888; margin-bottom: 5px;">📅 Praticado em: ${dataDoRegistro}</p>
+                            <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${tempoFormatado}</p>
                             <p class="descricao-diario">${publicacao.anotacoes}</p>
                             <p class="descricao-diario" style="font-size: 11px; color: #888;">Artista: ${publicacao.nome}</p>
                         </div>`;

@@ -1,4 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
+var diarioModel = require("../models/diarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -43,13 +44,11 @@ function autenticar(req, res) {
 }
 
 function cadastrar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var contatoArte = req.body.contatoArteServer;
 
-    // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else if (email == undefined) {
@@ -76,14 +75,6 @@ function cadastrar(req, res) {
                 }
             );
     }
-}
-
-function registrarAcesso(idUsuario) {
-    var instrucaoSql = `
-        INSERT INTO acesso (fkUsuario) VALUES (${idUsuario});
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
 }
 
 function registrarAcesso(req, res) {
@@ -120,12 +111,62 @@ function buscarAcessos(req, res) {
     }); 
 }
 
+function buscarKpis(req, res) {
+    var idUsuario = req.params.idUsuario;
+    var kpis = { acessos: 0, treino: 0, tecnica: 'Nenhuma' };
+
+    usuarioModel.buscarAcessosHoje()
+        .then(function (resultadoAcessos) {
+            if (resultadoAcessos.length > 0 && resultadoAcessos[0].totalAcessos !== undefined) {
+                kpis.acessos = resultadoAcessos[0].totalAcessos;
+            }
+            return usuarioModel.buscarMediaTreino();
+        })
+        .then(function (resultadoTreino) {
+            if (resultadoTreino.length > 0 && resultadoTreino[0].mediaTreino != null) {
+                kpis.treino = resultadoTreino[0].mediaTreino;
+            }
+            return usuarioModel.buscarTecnicaFavorita(idUsuario);
+        })
+        .then(function (resultadoTecnica) {
+            if (resultadoTecnica.length > 0 && resultadoTecnica[0].tecnica != null) {
+                kpis.tecnica = resultadoTecnica[0].tecnica;
+            }
+            res.status(200).json(kpis);
+        })
+        .catch(function (erro) {
+            console.log("Erro no Controller das KPIs:", erro);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+function buscarTecnicas(req, res) {
+    var idUsuario = req.params.idUsuario; 
+
+    if (idUsuario == undefined) {
+        res.status(400).send("O idUsuario está undefined no controller!");
+    } else {
+        usuarioModel.buscarTecnicas(idUsuario)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!");
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+                res.status(500).json(erro.sqlMessage);
+            }); 
+    }
+}
 
 module.exports = {
     autenticar,
     cadastrar,
     registrarAcesso,
-    buscarAcessos
+    buscarAcessos,
+    buscarKpis,
+    buscarTecnicas
 }
 
     

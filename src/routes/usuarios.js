@@ -20,4 +20,12 @@ router.get("/buscarAcessos", function (req, res) {
     usuarioController.buscarAcessos(req, res);
 });
 
+router.get("/buscarKpis/:idUsuario", function (req, res) {
+    usuarioController.buscarKpis(req, res);
+});
+
+router.get("/buscarTecnicas/:idUsuario", function (req, res) {
+    usuarioController.buscarTecnicas(req, res);
+});
+
 module.exports = router;

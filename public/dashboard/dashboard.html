@@ -99,9 +99,36 @@
             <h2 class="titulo-tela-iniciante">Gráficos</h2>
             <p class="texto-tela-iniciante">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi dolor a fugiat minus, eveniet sequi?</p>
 
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <h3>Acessos Hoje</h3>
+                    <p id="kpi_acessos"></p>
+                    <span>Acessos em tempo real</span>
+                </div>
+                
+                <div class="kpi-card">
+                    <h3>Tempo Médio de Treino</h3>
+                    <p id="kpi_treino"></p>
+                    <span>Meta: 30 min/dia</span>
+                </div>
+
+                <div class="kpi-card">
+                    <h3>Técnica Favorita</h3>
+                    <p id="kpi_tecnica"></p>
+                    <span>Baseado nos diários</span>
+                </div>
+            </div>
+
             <div id="alerta"></div>
-            <div class="graph">
-                <canvas id="canvas_grafico_acessos"></canvas>
+            <div class="flex-graficos">
+                <div class="graph">
+                    <canvas id="canvas_grafico_acessos"></canvas>
+                </div>
+    
+                <div class="graph" style="margin-top: 30px;">
+                    <canvas id="canvas_grafico_tecnicas"></canvas>
+                </div>
+
             </div>
         </div>
     </aside>
@@ -112,12 +139,37 @@
 </html>
 
 <script>
-//    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     validarSessao();
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico();
+    window.onload = function() {
+        obterDadosGrafico();
+        obterDadosKpis();
+        buscarTecnicasUsuario();
+    };
+
+    function obterDadosKpis() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/usuarios/buscarKpis/${idUsuario}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (dadosKpi) {
+                        console.log(`KPIs recebidas: ${JSON.stringify(dadosKpi)}`);
+                        
+                        document.getElementById("kpi_acessos").innerHTML = dadosKpi.acessos;
+                        document.getElementById("kpi_treino").innerHTML = `${dadosKpi.treino} min`;
+                        document.getElementById("kpi_tecnica").innerHTML = dadosKpi.tecnica;
+                    });
+                } else {
+                    console.error('Erro ao obter dados das KPIs');
+                }
+            })
+        .catch(function (erro) {
+            console.error(`Erro no fetch das KPIs: ${erro.message}`);
+        });
+    }
 
     function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {
@@ -165,6 +217,23 @@
             type: 'line',
             data: dados,
             options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        align: 'center',
+                        labels: {
+                            color: '#2b4c3f',
+                            font: {
+                                size: 18,
+                                family: 'Poppins',
+                                weight: '600'
+                            },
+                            boxWidth: 25,
+                            padding: 15
+                        }
+                    }
+                },
                 scales: {
                     y: { beginAtZero: true }
                 }
@@ -210,5 +279,79 @@
         .catch(function (error) {
             console.error(`Erro na atualização: ${error.message}`);
         });
+    }
+
+    function buscarTecnicasUsuario() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/usuarios/buscarTecnicas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados das técnicas recebidos: ${JSON.stringify(resposta)}`);    
+                    plotarGraficoTecnicas(resposta);
+                });
+            } else {
+                console.error('Nenhum dado de técnica encontrado.');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção das técnicas p/ gráfico: ${error.message}`);
+        });
+    }
+
+    function plotarGraficoTecnicas(dadosBanco) {
+        console.log('iniciando plotagem do gráfico de técnicas...');
+
+        let labels = [];
+        let valores = [];
+
+        for (let i = 0; i < dadosBanco.length; i++) {
+            var registro = dadosBanco[i];
+            labels.push(registro.tecnica);
+            valores.push(registro.quantidade);
+        }
+
+        let dadosGrafico = {
+            labels: labels,
+            datasets: [{
+                data: valores,
+                fill: true,
+                borderColor: '#e6005a', 
+                backgroundColor: ['#e6005a', '#8fa89b', '#c2bfae'],
+                tension: 0.3,
+                borderWidth: 2,
+                borderColor: '#fcfaf2'
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data: dadosGrafico,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'right', 
+                        labels: {
+                            color: '#2b4c3f',
+                            font: {
+                                family: 'Barlow',
+                                size: 13,
+                                weight: '500'
+                            },
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        }
+
+        let myChart = new Chart(
+            document.getElementById(`canvas_grafico_tecnicas`),
+            config
+        );
+
     }
 </script>

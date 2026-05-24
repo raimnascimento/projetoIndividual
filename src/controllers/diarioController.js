@@ -1,4 +1,5 @@
 // alteração do nome da variável e rota
+
 var diarioModel = require("../models/diarioModel");
 
 function listar(req, res) {
@@ -14,6 +15,7 @@ function listar(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
 
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
@@ -40,6 +42,8 @@ function listarPorUsuario(req, res) {
         );
 }
 
+
+
 function pesquisarDescricao(req, res) {
     var descricao = req.params.descricao;
 
@@ -59,10 +63,12 @@ function pesquisarDescricao(req, res) {
                 res.status(500).json(erro.sqlMessage);
             }
         );
+
 }
 
+
+
 function publicar(req, res) {
-    // parametrização das variáveis da tabela registrosDiario
     var tecnica = req.body.tecnica;
     var tempoTreino = req.body.tempoTreino;
     var anotacoes = req.body.anotacoes;
@@ -93,6 +99,7 @@ function publicar(req, res) {
     }
 }
 
+
 function editar(req, res) {
     var novaDescricao = req.body.descricao;
     var idAviso = req.params.idAviso;
@@ -112,6 +119,7 @@ function editar(req, res) {
         );
 }
 
+
 function deletar(req, res) {
     var idAviso = req.params.idAviso;
 
@@ -130,6 +138,7 @@ function deletar(req, res) {
         );
 }
 
+
 module.exports = {
     listar,
     listarPorUsuario,
@@ -137,4 +146,4 @@ module.exports = {
     publicar,
     editar,
     deletar
-}
+};
