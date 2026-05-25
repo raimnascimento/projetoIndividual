@@ -142,7 +142,7 @@
     function obterDadosKpis() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
-        fetch(`/usuarios/buscarKpis/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/dashboard/buscarKpis/${idUsuario}`, { cache: 'no-store' })
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then(function (dadosKpi) {
@@ -166,7 +166,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/usuarios/buscarAcessos`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/dashboard/buscarAcessos`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -274,7 +274,7 @@
     }
 
     function atualizarGrafico(dados, myChart) {
-        fetch(`/usuarios/buscarAcessos`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/dashboard/buscarAcessos`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -309,7 +309,7 @@
     function buscarTecnicasUsuario() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
-        fetch(`/usuarios/buscarTecnicas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/dashboard/buscarTecnicas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados das técnicas recebidos: ${JSON.stringify(resposta)}`);    
