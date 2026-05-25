@@ -11,7 +11,6 @@ function validarSessao() {
             b_usuario.innerHTML = nome;
         }
 
-        // conversão do ID do usuário para binário
         let decimal = sessionStorage.ID_USUARIO;
 
         if (decimal != undefined && msgConversao != null) {
