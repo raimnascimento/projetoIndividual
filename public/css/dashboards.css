@@ -347,6 +347,19 @@ b {
   font-size: .950rem;
 }
 
+.video-tutorial {
+  width: 48%; 
+  display: flex;
+  align-items: center; 
+}
+
+.video-tutorial iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; 
+  border-radius: 25px;  
+}
+
 /* MUSEU */
 .museu {
   margin: 3%;
