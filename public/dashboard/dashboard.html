@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/../css/estilo.css"/>
 
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,9 +19,6 @@
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
@@ -97,7 +93,7 @@
         <div class="grafico-dashboard">
 
             <h2 class="titulo-tela-iniciante">Gráficos</h2>
-            <p class="texto-tela-iniciante">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi dolor a fugiat minus, eveniet sequi?</p>
+            <p class="texto-tela-iniciante">Acompanhe a sua dedicação diária, analise as suas técnicas favoritas e veja a sua evolução artística ganhar forma através dos números!</p>
 
             <div class="kpi-container">
                 <div class="kpi-card">
@@ -119,7 +115,7 @@
                 </div>
             </div>
 
-            <div id="alerta"></div>
+            <!-- <div id="alerta"></div> -->
             <div class="flex-graficos">
                 <div class="graph">
                     <canvas id="canvas_grafico_acessos"></canvas>
@@ -217,7 +213,23 @@
             type: 'line',
             data: dados,
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Histórico de Acessos à Dashboard',
+                        color: '#2b4c3f',
+                        font: {
+                            family: 'Poppins',
+                            size: 25,
+                            weight: '600'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    },
                     legend: {
                         display: true,
                         position: 'bottom',
@@ -235,7 +247,26 @@
                     }
                 },
                 scales: {
-                    y: { beginAtZero: true }
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 16,
+                                family: 'Poppins',
+                                weight: '600'
+                            },
+                            color: '#555c64'
+                        }
+                    },
+                },
+                y: { 
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            size: 14,
+                            family: 'Poppins'
+                        },
+                        color: '#555c64'
+                    }
                 }
             }
         };
@@ -335,8 +366,23 @@
             data: dadosGrafico,
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                cutout: '70%',
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Uso de Técnicas nos Diários',
+                        color: '#2b4c3f',
+                        font: {
+                            family: 'Poppins',
+                            size: 25,
+                            weight: '600'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    },
                     legend: {
                         display: true,
                         position: 'right', 
@@ -344,7 +390,7 @@
                             color: '#2b4c3f',
                             font: {
                                 family: 'Barlow',
-                                size: 13,
+                                size: 18,
                                 weight: '500'
                             },
                             padding: 15

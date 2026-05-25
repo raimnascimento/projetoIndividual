@@ -102,15 +102,12 @@
 
       <section class="dash">
         <div class="textos-introducao">
-            <h2 class="titulo-tela-iniciante">
-              Diário de <span class="span-ttl">evolução artística</span
-              ><br />
-            </h2>
+            <h2 class="titulo-tela-iniciante">Diário de <span class="span-ttl">evolução artística</span></h2>
             <p class="texto-tela-iniciante">Acompanhe seu progresso e anote seus aprendizados!</p>
         </div>
 
         <div id="mensagem_erro">
-          <span class="alerta-erros" id="span_erro">Por gentileza, preencha os seguintes campos:</span>
+          <span class="alerta-erros" id="span_erro"></span>
         </div>
 
         <div class="diario">
@@ -125,14 +122,14 @@
             <div class="campo-diario">
                 <p class="diario-tecnica">Tempo de treino:</p>
                 <div style="display: flex; gap: 5px;">
-                    <input type="number" id="ipt_tempoGasto" class="input-diario" placeholder="Ex: 45" style="width: 80px;">
-                    <select id="slc_tipo_tempo" class="input-diario">
+                    <input type="number" id="ipt_tempoGasto" class="input-diario" placeholder="Ex: 45" style="width: 48%;">
+                    <select id="slc_tipo_tempo" class="input-diario" style="width: 48%;">
                         <option value="minutos">Minutos</option>
                         <option value="horas">Horas</option>
                     </select>
                 </div>
             </div>
-            <div class="campo-diario">
+            <div class="campo-diario campo-anotacao">
                 <p class="diario-tecnica">Anotações:</p>
                 <input type="text" id="ipt_anotacoes" class="input-diario" placeholder="Descreva sua evolução...">
             </div>
@@ -177,13 +174,13 @@
         var erros = false;
 
         if (tempoGasto.length == 0 && anotacao.length == 0) {
-            mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha o tempo gasto e suas anotações.</span><br>`;
+            mensagem_erro.innerHTML = `<span class="alerta-erros" style="display:flex" id="span_erro">Por gentileza, preencha o tempo gasto e suas anotações.</span><br>`;
             erros = true;
         } else if (tempoGasto.length == 0) {
-            mensagem_erro.innerHTML = `<span id="span_erro">Por gentileza, preencha o tempo gasto.</span><br>`;
+            mensagem_erro.innerHTML = `<span class="alerta-erros" style="display:flex" id="span_erro">Por gentileza, preencha o tempo gasto.</span><br>`;
             erros = true;
         } else if (anotacao.length == 0) {
-            mensagem_erro.innerHTML = `<span style="display:block" id="span_erro">Por gentileza, preencha suas anotações.</span><br>`;
+            mensagem_erro.innerHTML = `<span class="alerta-erros" style="display:flex" id="span_erro">Por gentileza, preencha suas anotações.</span><br>`;
             erros = true;
         }
 
@@ -265,10 +262,10 @@
                         feed.innerHTML += `
                         <div class="card-diario">
                             <h3 class="ttl-diario">${publicacao.tecnica}</h3>
-                            <p class="descricao-diario" style="font-size: 11px; color: #888; margin-bottom: 5px;">📅 Praticado em: ${dataDoRegistro}</p>
+                            <p class="descricao-diario" style="font-size: .8rem; color: #888; margin-bottom: 5px;">📅 Praticado em: ${dataDoRegistro}</p>
                             <p class="descricao-diario"><span class="desc-diario-span">Tempo de treino: </span>${tempoFormatado}</p>
                             <p class="descricao-diario">${publicacao.anotacoes}</p>
-                            <p class="descricao-diario" style="font-size: 11px; color: #888;">Artista: ${publicacao.nome}</p>
+                            <p class="descricao-diario" style="font-size: .8rem; color: #888;">Artista: ${publicacao.nome}</p>
                         </div>`;
                     }
                 });
