@@ -2,21 +2,6 @@
 
 var diarioModel = require("../models/diarioModel");
 
-function listar(req, res) {
-    diarioModel.listar().then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
-    }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar os diários: ", erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-    });
-}
-
-
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -41,32 +26,6 @@ function listarPorUsuario(req, res) {
             }
         );
 }
-
-
-
-function pesquisarDescricao(req, res) {
-    var descricao = req.params.descricao;
-
-    diarioModel.pesquisarDescricao(descricao)
-        .then(
-            function (resultado) {
-                if (resultado.length > 0) {
-                    res.status(200).json(resultado);
-                } else {
-                    res.status(204).send("Nenhum resultado encontrado!");
-                }
-            }
-        ).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao buscar os diários: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-
-}
-
-
 
 function publicar(req, res) {
     var tecnica = req.body.tecnica;
@@ -99,51 +58,8 @@ function publicar(req, res) {
     }
 }
 
-
-function editar(req, res) {
-    var novaDescricao = req.body.descricao;
-    var idAviso = req.params.idAviso;
-
-    diarioModel.editar(novaDescricao, idAviso)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-
-
-function deletar(req, res) {
-    var idAviso = req.params.idAviso;
-
-    diarioModel.deletar(idAviso)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-
-
 module.exports = {
-    listar,
     listarPorUsuario,
-    pesquisarDescricao,
-    publicar,
-    editar,
-    deletar
+    publicar
 };
+
