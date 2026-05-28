@@ -139,7 +139,7 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
-                    fetch("/usuarios/registrarAcesso", {
+                    fetch("/dashboard/registrarAcesso", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({

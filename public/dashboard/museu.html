@@ -113,17 +113,20 @@
 
         <div class="museu">
           <div class="card-museu">
-            <img
-              src="/assets/icon/nature.png"
-              alt=""
-              class="icon-leaf"
-            />
-            <h3 class="titulo-materiais">Meus desenhos</h3>
+            <img src="/assets/icon/nature.png" alt="" class="icon-leaf"/>
+            <h3 class="titulo-materiais">Minhas pinturas</h3>
           </div>
 
-          <div id="vetor_pinturas" class="flex-pinturas">
-          
+          <div id="vetor_pinturas" class="flex-pinturas"></div>
+        </div>
+
+        <div class="museu">
+          <div class="card-museu">
+            <img src="/assets/icon/nature.png" alt="" class="icon-leaf" />
+            <h3 class="titulo-materiais">Pinturas da minha família</h3>
           </div>
+
+          <div id="vetor_familia" class="flex-pinturas"></div>
         </div>
 
         <rodape class="rodape-principal">
@@ -142,76 +145,76 @@
 <script>
     const minhasObras = [
       {
-        titulo: 'Flores na janela',
-        descricao: 'Uma janela em fundo rosado com flores vermelhas na base',
-        tecnica: 'aquarela',
-        imagem: 'flores1.jpg',
+        titulo: 'O Despertar da Noite',
+        descricao: 'A imensidão de uma lua trazendo um mistério acalentador que abraça a escuridão.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/anoitecer.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Casa entre o verde',
-        descricao: 'Uma pequena casa com telhado alaranjado cercada por árvores e folhas, no meio de uma paisagem natural.',
-        tecnica: 'aquarela',
-        imagem: 'janela2.jpg',
+        titulo: 'Recanto do Aconchego',
+        descricao: 'Um refúgio nostálgico que repousa sob o abraço vivo da natureza. Um lar escondido do mundo.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/casinhabranca.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Paisagem tranquila',
-        descricao: 'Um campo aberto com céu leve e calmo',
-        tecnica: 'aquarela',
-        imagem: 'paisagem1.jpg',
+        titulo: 'Solidão Serena',
+        descricao: 'A calmaria de um banco vazio que fita o horizonte infinito sob um céu suave, convidando a mente a descansar.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/ceuazul.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Céu em aquarela',
-        descricao: 'Cores diluídas formando um céu suave',
-        tecnica: 'aquarela',
-        imagem: 'ceu1.jpg',
+        titulo: 'Sinfonia do Crepúsculo',
+        descricao: ' Camadas de montanhas assistem ao céu derreter em tons de fogo, rosa e mistério.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/entardecer.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Fim de tarde',
-        descricao: 'O céu mudando de cor lentamente',
-        tecnica: 'aquarela',
-        imagem: 'entardecer1.jpg',
+        titulo: 'Dança das Margaridas',
+        descricao: 'Flores vibrantes que brotam da escuridão mais profunda, erguendo-se em direção à luz',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/flores.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Flores delicadas',
-        descricao: 'Pinceladas leves tentando capturar o movimento',
-        tecnica: 'aquarela',
-        imagem: 'flores2.jpg',
+        titulo: 'Janela da Alma',
+        descricao: 'Uma explosão de flores apaixonadas que transborda de uma janela.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/janelaflorida.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Silêncio do entardecer',
-        descricao: 'Árvores escuras com um céu que traz a sensação de calma antes da noite chegar.',
-        tecnica: 'aquarela',
-        imagem: 'montanha1.jpg',
+        titulo: 'Amanhecer no Horizonte',
+        descricao: 'A copa de uma árvore em flor estende seus braços sobre a imensidão azul, derramando esperança.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/jardimflorido.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Campo com flores',
-        descricao: 'Pequenas flores espalhadas em um campo aberto',
-        tecnica: 'aquarela',
-        imagem: 'campo1.jpg',
+        titulo: 'Caminho de Luz',
+        descricao: 'O reflexo dourado e tímido da lua sobre as águas calmas de um lago escuro.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/noite.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Céu verde em degradê',
-        descricao: 'Floresta de pinheiros escuros com um céu em degradê de verde, com pássaros ao fundo atravessando.',
-        tecnica: 'aquarela',
-        imagem: 'janela3.jpg',
+        titulo: 'Sopro de Liberdade',
+        descricao: 'A névoa misteriosa de uma floresta de pinheiros imersa em um céu esmeralda.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/pinheiros.jpg',
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Céu verde em degradê',
-        descricao: 'Floresta de pinheiros escuros com um céu em degradê de verde, com pássaros ao fundo atravessando.',
-        tecnica: 'aquarela',
-        imagem: 'janela3.jpg',
+        titulo: 'Último Raio de Sol',
+        descricao: 'Um sol que se despede por entre as árvores. O adeus mais bonito que a natureza sabe dar.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/pordosol.jpg',
         autor: 'Raissa Nascimento'
       }
-    ]
+    ];
 
     for (let i = 0; i < minhasObras.length; i++) {
       vetor_pinturas.innerHTML += `<div class="cards-pinturas">
@@ -221,5 +224,53 @@
               <p class="descricao-materiais"><b>Técnica:</b> ${minhasObras[i].tecnica}</p>
               <p class="descricao-materiais indicacao"><b>Autor:</b> ${minhasObras[i].autor}</p>
             </div>`;
+    }
+
+    const obrasFamilia = [
+      {
+        titulo: 'Caminho da Roça',
+        descricao: 'Uma estrada de terra que leva a pequenas casas brancas, cercada por montanhas e muito verde.',
+        tecnica: 'Tinta a óleo',
+        imagem: '/assets/pinturas/felipe.jpg',
+        autor: 'Felipe Freire'
+      },
+      {
+        titulo: 'Riacho entre as Árvores',
+        descricao: 'Um rio cortando uma paisagem com folhagens amarelas e um céu nublado.',
+        tecnica: 'Tinta a óleo',
+        imagem: '/assets/pinturas/felipe-2.jpg',
+        autor: 'Felipe Freire'
+      },
+      {
+        titulo: 'Lydia Deetz e Beetlejuice',
+        descricao: 'Retrato expressivo da personagem Lydia cercada pela icônica cobra listrada.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/geo.jpg',
+        autor: 'Geovana Rodrigues'
+      },
+      {
+        titulo: 'Bob Marley',
+        descricao: 'Retrato estilizado de Bob Marley, com fundo texturizado e respingos de tinta colorida.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/geoo.jpg',
+        autor: 'Geovana Rodrigues'
+      },
+      {
+        titulo: 'Olhar da Floresta',
+        descricao: 'Pintura marcante de um indígena em meio a folhagens tropicais verdes.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/geooo.jpg',
+        autor: 'Geovana Rodrigues'
+      }
+    ];
+
+    for (let i = 0; i < obrasFamilia.length; i++) {
+      vetor_familia.innerHTML += `<div class="cards-pinturas">
+          <img src="${obrasFamilia[i].imagem}" alt="" class="img-pinturas" />
+          <h3 class="titulo-materiais">${obrasFamilia[i].titulo}</h3>
+          <p class="descricao-materiais">${obrasFamilia[i].descricao}</p>
+          <p class="descricao-materiais"><b>Técnica:</b> ${obrasFamilia[i].tecnica}</p>
+          <p class="descricao-materiais indicacao"><b>Autor:</b> ${obrasFamilia[i].autor}</p>
+        </div>`;
     }
 </script>

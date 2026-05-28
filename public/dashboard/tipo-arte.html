@@ -142,28 +142,28 @@
 
     </html>
 <script>
-    const obrasMonet = [
-        {
+    const obrasMonet = {
+        obra1: {
             titulo: 'Impression, Sunrise',
             data: '1872',
             tecnica: 'Oléo sobre tela',
             imagem: '/assets/imgs/pintura-monet.jpg'
         },
-        {
+        obra2: {
             titulo: 'Water Lilies',
             data: '1916-1919',
             tecnica: 'Oléo sobre tela',
             imagem: '/assets/imgs/pintura-monet(1).jpg'
         },
-        {
+        obra3: {
             titulo: 'Woman with a parasol',
             data: '1875',
             tecnica: 'Oléo sobre tela',
             imagem: '/assets/imgs/woman-with-a-parasol.jpg'
-        },
-    ];
+        }
+    };
 
-    for (let i = 0; i < obrasMonet.length; i++) {
+    for (let i in obrasMonet) {
         vetor_obras.innerHTML += `
         <div class="principais-obras-monet">
             <img src="${obrasMonet[i].imagem}" alt="" class="img-obra-monet">
