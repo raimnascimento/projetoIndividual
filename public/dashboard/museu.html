@@ -123,7 +123,7 @@
         <div class="museu">
           <div class="card-museu">
             <img src="/assets/icon/nature.png" alt="" class="icon-leaf" />
-            <h3 class="titulo-materiais">Pinturas da minha família</h3>
+            <h3 class="titulo-materiais">Pinturas/Desenhos da minha família</h3>
           </div>
 
           <div id="vetor_familia" class="flex-pinturas"></div>
@@ -166,7 +166,7 @@
         autor: 'Raissa Nascimento'
       },
       {
-        titulo: 'Sinfonia do Crepúsculo',
+        titulo: 'Pintando o entardecer',
         descricao: ' Camadas de montanhas assistem ao céu derreter em tons de fogo, rosa e mistério.',
         tecnica: 'Aquarela',
         imagem: '/assets/pinturas/entardecer.jpg',
@@ -210,20 +210,94 @@
       {
         titulo: 'Último Raio de Sol',
         descricao: 'Um sol que se despede por entre as árvores. O adeus mais bonito que a natureza sabe dar.',
-        tecnica: 'Aquarela',
+        tecnica: 'Guache',
         imagem: '/assets/pinturas/pordosol.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Último Raio de Sol',
+        descricao: 'Uma floresta de pinheiros imersa sob um céu esmeralda com o pôr do sol ao fundo.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/anoitecer2.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Refúgio na Colina',
+        descricao: 'Uma pequena casa rústica cercada por cercas de madeira em meio a uma paisagem montanhosa.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/casinha.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Silhuetas sob o Céu Roxo',
+        descricao: 'Silhuetas de árvores destacam-se contra um céu noturno em tons intensos de roxo e lilás.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/ceuroxo.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Campos sob Nuvens Carregadas',
+        descricao: 'Campos abertos sob nuvens carregadas, transmitindo a vastidão da natureza.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/colheita.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Janela da Alma',
+        descricao: 'Uma explosão de flores apaixonadas em tons vermelhos que transborda de uma janela clássica.',
+        tecnica: 'Guache e Aquarela',
+        imagem: '/assets/pinturas/janela.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Inocência no Campo',
+        descricao: 'Pintura delicada de uma jovem de costas apreciando uma imensa planície florida.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/menina.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Amanhecer no Horizonte',
+        descricao: 'A copa de uma árvore em flor estende seus galhos sobre uma imensidão azul.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/montanhas.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Caminho de Luz',
+        descricao: 'O reflexo dourado e tímido do sol poente sobre as águas calmas e folhagens de outono.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/outono.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Travessia Calma',
+        descricao: 'Uma ponte de madeira antiga cruza um riacho tranquilo cercado de mata densa.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/ponte.jpg',
+        autor: 'Raissa Nascimento'
+      },
+      {
+        titulo: 'Campos de Ouro',
+        descricao: 'Uma vasta plantação de trigo balançando sob um céu azul suave de fim de tarde.',
+        tecnica: 'Aquarela',
+        imagem: '/assets/pinturas/trigo.jpg',
         autor: 'Raissa Nascimento'
       }
     ];
 
     for (let i = 0; i < minhasObras.length; i++) {
-      vetor_pinturas.innerHTML += `<div class="cards-pinturas">
-              <img src="${minhasObras[i].imagem}" alt="" class="img-pinturas" />
-              <h3 class="titulo-materiais">${minhasObras[i].titulo}</h3>
-              <p class="descricao-materiais">${minhasObras[i].descricao}</p>
-              <p class="descricao-materiais"><b>Técnica:</b> ${minhasObras[i].tecnica}</p>
-              <p class="descricao-materiais indicacao"><b>Autor:</b> ${minhasObras[i].autor}</p>
-            </div>`;
+      vetor_pinturas.innerHTML += `<div class="cards-obras">
+        <img src="${minhasObras[i].imagem}" alt="" class="img-obras" />
+        <div class="conteudo-obras">
+          <h3 class="titulo-obras">${minhasObras[i].titulo}</h3>
+          <p class="descricao-obras">${minhasObras[i].descricao}</p>
+        </div>
+        <div class="info-obras">
+          <p class="metadados-obras"><b>Técnica:</b> ${minhasObras[i].tecnica}</p>
+          <p class="metadados-obras indicacao-obras"><b>Autor:</b> ${minhasObras[i].autor}</p>
+        </div>
+      </div>`;
     }
 
     const obrasFamilia = [
@@ -239,6 +313,27 @@
         descricao: 'Um rio cortando uma paisagem com folhagens amarelas e um céu nublado.',
         tecnica: 'Tinta a óleo',
         imagem: '/assets/pinturas/felipe-2.jpg',
+        autor: 'Felipe Freire'
+      },
+      {
+        titulo: 'Pôr do Sol no Lago',
+        descricao: 'Uma paisagem tranquila refletindo as cores quentes do entardecer sobre as águas de um lago cercado por árvores.',
+        tecnica: 'Tinta a óleo',
+        imagem: '/assets/pinturas/felipe-3.jpg',
+        autor: 'Felipe Freire'
+      },
+      {
+        titulo: 'Caminho entre os Pinheiros',
+        descricao: 'Uma trilha que corta uma floresta densa de pinheiros sob uma atmosfera suave de luz natural.',
+        tecnica: 'Tinta a óleo',
+        imagem: '/assets/pinturas/felipe-4.jpg',
+        autor: 'Felipe Freire'
+      },
+      {
+        titulo: 'Ondas na Costa',
+        descricao: 'O movimento vigoroso do mar com ondas quebrando contra as rochas em uma praia deserta.',
+        tecnica: 'Tinta a óleo',
+        imagem: '/assets/pinturas/felipe-5.jpg',
         autor: 'Felipe Freire'
       },
       {
@@ -261,16 +356,104 @@
         tecnica: 'Guache',
         imagem: '/assets/pinturas/geooo.jpg',
         autor: 'Geovana Rodrigues'
+      },
+      {
+        titulo: 'Melanie no País das Maravilhas',
+        descricao: 'Retrato expressionista inspirado na estética sombria de Alice no País das Maravilhas.',
+        tecnica: 'Guache',
+        imagem: '/assets/pinturas/geoooo.jpg',
+        autor: 'Geovana Rodrigues'
+      },
+      {
+        titulo: 'Tupac Shakur',
+        descricao: 'Retrato detalhado do rapper 2Pac com fundo expressivo em respingos vermelhos.',
+        tecnica: 'Lápis Aquarelável',
+        imagem: '/assets/pinturas/geooooo.jpg',
+        autor: 'Geovana Rodrigues'
+      },
+      {
+        titulo: 'Ilustração de Moda',
+        descricao: 'Croqui de moda com silhueta dramática trazendo chapéu, espartilho estruturado e mangas bufantes em babados.',
+        tecnica: 'Grafite',
+        imagem: '/assets/pinturas/nicolly.png',
+        autor: 'Nicolly Freire'
+      },
+      {
+        titulo: 'Ilustração de Moda',
+        descricao: 'Design conceitual composto por top de franjas com fivela pesada e saia plissada geométrica.',
+        tecnica: 'Grafite',
+        imagem: '/assets/pinturas/nicolly-2.png',
+        autor: 'Nicolly Freire'
+      },
+      {
+        titulo: 'Ilustração de Moda',
+        descricao: 'Croqui minimalista com vestido de cauda longa, decote cruzado e recortes contemporâneos.',
+        tecnica: 'Grafite',
+        imagem: '/assets/pinturas/nicolly-3.png',
+        autor: 'Nicolly Freire'
+      },
+      {
+        titulo: 'Ilustração de Moda',
+        descricao: 'Estudo de moda urbana unindo colete estruturado com cinto largo e bermuda volumosa.',
+        tecnica: 'Grafite',
+        imagem: '/assets/pinturas/nicolly-4.png',
+        autor: 'Nicolly Freire'
+      },
+      {
+        titulo: 'Ilustração de Moda',
+        descricao: 'Variação estilística focada em texturas plissadas combinadas a camisaria clássica e sobreposição rígida.',
+        tecnica: 'Grafite',
+        imagem: '/assets/pinturas/nicolly-5.png',
+        autor: 'Nicolly Freire'
+      },
+      {
+        titulo: 'Girassol em Chamas',
+        descricao: 'Ilustração conceitual de um girassol com pétalas estilizadas que remetem ao fogo.',
+        tecnica: 'Arte Digital',
+        imagem: '/assets/pinturas/hugo.jpeg',
+        autor: 'Victor Hugo'
+      },
+      {
+        titulo: 'Macabro Lunático',
+        descricao: 'Criatura bizarra com cabeça de lua crescent e feição sádica sob traços urbanos e agressivos.',
+        tecnica: 'Arte Digital',
+        imagem: '/assets/pinturas/hugoo.jpeg',
+        autor: 'Victor Hugo'
+      },
+      {
+        titulo: 'Cyber-Mecha Drill',
+        descricao: 'Mecha biomecânico grotesco e pontiagudo armado com uma broca industrial pesada.',
+        tecnica: 'Arte Digital',
+        imagem: '/assets/pinturas/hugoo.png',
+        autor: 'Victor Hugo'
+      },
+      {
+        titulo: 'O Terceiro Olho do Caos',
+        descricao: 'Entidade mística e perturbadora dominada por globos oculares imersos em uma aura de chamas douradas.',
+        tecnica: 'Arte Digital',
+        imagem: '/assets/pinturas/hugooo.jpeg',
+        autor: 'Victor Hugo'
+      },
+      {
+        titulo: 'Melancolia Underground',
+        descricao: 'Bobo da corte gótico em cima de uma engrenagem sob uma aura neon decadente.',
+        tecnica: 'Arte Digital',
+        imagem: '/assets/pinturas/hugoooo.png',
+        autor: 'Victor Hugo'
       }
     ];
 
     for (let i = 0; i < obrasFamilia.length; i++) {
-      vetor_familia.innerHTML += `<div class="cards-pinturas">
-          <img src="${obrasFamilia[i].imagem}" alt="" class="img-pinturas" />
-          <h3 class="titulo-materiais">${obrasFamilia[i].titulo}</h3>
-          <p class="descricao-materiais">${obrasFamilia[i].descricao}</p>
-          <p class="descricao-materiais"><b>Técnica:</b> ${obrasFamilia[i].tecnica}</p>
-          <p class="descricao-materiais indicacao"><b>Autor:</b> ${obrasFamilia[i].autor}</p>
-        </div>`;
+      vetor_familia.innerHTML += `<div class="cards-obras">
+        <img src="${obrasFamilia[i].imagem}" alt="" class="img-obras" />
+        <div class="conteudo-obras">
+          <h3 class="titulo-obras">${obrasFamilia[i].titulo}</h3>
+          <p class="descricao-obras">${obrasFamilia[i].descricao}</p>
+        </div>
+        <div class="info-obras">
+          <p class="metadados-obras"><b>Técnica:</b> ${obrasFamilia[i].tecnica}</p>
+          <p class="metadados-obras indicacao-obras"><b>Autor:</b> ${obrasFamilia[i].autor}</p>
+        </div>
+      </div>`;
     }
 </script>

@@ -303,6 +303,10 @@ b {
   display: flex;
   gap: 15px;
   width: 98%;
+  align-items: center;       
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .titulo-principal {
@@ -347,7 +351,9 @@ b {
   font-size: .950rem;
 }
 
-.video-tutorial {
+/* TUTORIAL */
+
+/* .video-tutorial {
   width: 48%; 
   display: flex;
   align-items: center; 
@@ -358,6 +364,20 @@ b {
   height: auto;
   aspect-ratio: 16 / 9; 
   border-radius: 25px;  
+} */
+
+.video-tutorial {
+  width: 45%;            
+  display: flex;
+  flex-direction: column;
+}
+
+.video-tutorial video {
+  width: 100%;
+  height: 60vh;
+  aspect-ratio: 16 / 9; 
+  border-radius: 25px;  
+  object-fit: cover;             
 }
 
 /* MUSEU */
@@ -394,6 +414,73 @@ b {
   display: flex;
   justify-content: center;
   gap: 4px;
+}
+
+
+/* OBRAS MUSEU */
+
+.cards-obras {
+  background-color: rgb(243, 242, 214);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 1rem 1.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  transition: transform 0.3s ease;
+  width: 18%;
+  min-width: 250px;
+}
+
+.cards-obras:hover {
+  box-shadow: 0 4px 10px rgba(206, 3, 57, 0.3);
+}
+
+.img-obras {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.conteudo-obras {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-obras {
+  font-size: 1.3rem;
+  color: rgb(7, 60, 7);
+  margin-bottom: 0.5rem;
+}
+
+.descricao-obras {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 1.5rem; 
+}
+
+.info-obras {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto; 
+}
+
+.metadados-obras {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.flex-pinturas {
+  display: flex;
+  align-items: stretch; 
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* DIARIO DE TREINO */
@@ -660,5 +747,3 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
-
-

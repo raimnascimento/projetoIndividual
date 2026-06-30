@@ -9,10 +9,18 @@ function registrarAcesso(idUsuario) {
 }
 
 function buscarAcessosGrafico() {
-  var instrucaoSql = `
-        SELECT * FROM vwDashboard;
+    var instrucaoSql = `
+        SELECT qtd, dia FROM (
+            SELECT COUNT(*) AS qtd, DATE_FORMAT(data_acesso, '%d/%m') AS dia, MIN(data_acesso) AS ordem
+            FROM acesso 
+            GROUP BY DATE_FORMAT(data_acesso, '%d/%m')
+            ORDER BY ordem DESC
+            LIMIT 7
+        ) AS subquery
+        ORDER BY ordem ASC;
     `;
-  return database.executar(instrucaoSql);
+    console.log("Executando a instrução SQL com inversão de ordem: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
 }
 
 function buscarAcessosHoje() {

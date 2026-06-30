@@ -13,6 +13,7 @@
 
     <script src="../js/sessao.js"></script>
 
+    <link rel="icon" href="../assets/icon/iconpallete.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
@@ -285,32 +286,16 @@
                     dados.labels = [];
                     dados.datasets[0].data = [];
 
-                    // 2. Colocamos TODOS os registros novos que vieram do banco de dados
                     for (let i = 0; i < novoRegistro.length; i++) {
                         var registro = novoRegistro[i];
                         dados.labels.push(registro.dia);
                         dados.datasets[0].data.push(registro.qtd);
                     }
 
-                    // 3. Renderiza a subida ou descida da linha imediatamente na tela
                     myChart.update();
 
-                    // Mantém o loop de checagem a cada 2 segundos
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, myChart), 2000);
                     
-                    // if (ultimoRegistro.dia == dados.labels[dados.labels.length - 1]) {
-                    //     console.log("Sem dados novos.");
-                    // } else {
-                    //     dados.labels.shift();
-                    //     dados.labels.push(ultimoRegistro.dia);
-
-                    //     dados.datasets[0].data.shift();
-                    //     dados.datasets[0].data.push(ultimoRegistro.qtd);
-
-                    //     myChart.update();
-                    // }
-
-                    // proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, myChart), 2000);
                 });
             } else {
                 console.error('Erro na atualização');
