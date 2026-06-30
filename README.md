@@ -8,7 +8,6 @@ O site contará com:
 
 * Apresentação pessoal e contexto sobre o projeto
 * Sistema de cadastro e login de usuários
-* Redirecionamento de conteúdo com base no nível de experiência (iniciante ou intermediário)
 * Tutoriais básicos para quem deseja começar
 * Galeria de pinturas autorais
 * Área restrita para usuários cadastrados
@@ -33,9 +32,13 @@ A documentação completa do projeto está disponível no link abaixo:
 Neste diretório estarão organizados os principais entregáveis desenvolvidos ao longo do projeto, incluindo:
 
 📄 Documentação geral e contexto do projeto
+
 🗂️ Modelagem e scripts de Banco de Dados
+
 📊 Planilhas de planejamento e backlog (gestão de atividades)
+
 🧱 Diagramas de arquitetura da solução
+
 📝 Registros e materiais de apoio 
 
 ---
